@@ -22,20 +22,20 @@ import Link from "next/link";
 
 const FOOTER_LINKS = [
   {
-    heading: "Platform",
-    links: ["Explore", "Imagine", "Frontier", "Timeline"],
-  },
-  {
-    heading: "Technology",
-    links: ["AI Systems", "Quantum", "Neural", "Web3"],
-  },
-  {
-    heading: "Community",
-    links: ["Visionaries", "Labs", "Open Source", "Events"],
+    heading: "Services",
+    links: ["AI & ML", "Cloud Architecture", "Custom Software", "Data Analytics", "Digital Strategy", "Cybersecurity"],
   },
   {
     heading: "Company",
-    links: ["Manifesto", "Team", "Press", "Careers"],
+    links: ["About Us", "Case Studies", "Careers", "Press"],
+  },
+  {
+    heading: "Resources",
+    links: ["Blog", "Documentation", "Open Source", "Events"],
+  },
+  {
+    heading: "Connect",
+    links: ["Contact Us", "Partnership", "Support", "Schedule Demo"],
   },
 ];
 
@@ -114,13 +114,13 @@ export default function Footer() {
                     backgroundClip: "text",
                   }}
                 >
-                  Imagines
+                  Imagination
                 </span>
               </div>
             </div>
 
             <p className="text-white/35 text-sm leading-relaxed">
-              A pioneering platform at the bleeding edge of human technology. We don't predict the future — we architect it.
+              A leading digital transformation company architecting the future of enterprise technology. From strategy to deployment — we build what moves businesses forward.
             </p>
 
             {/* Newsletter */}
@@ -193,7 +193,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/25 font-mono">
-            © 2025 Tech Boundary Imagines. All rights reserved.
+            © 2025 Tech Boundary Imagination. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Use", "Contact"].map((item) => (

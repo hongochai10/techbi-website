@@ -17,22 +17,25 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tech Boundary Imagines — Where Future Begins",
+  title: "TechBI — Tech Boundary Imagination | Digital Transformation Company",
   description:
-    "A pioneering platform at the bleeding edge of technology — AI, Quantum Computing, Neural Interfaces, and Web3. Imagine the impossible. Build the future.",
+    "TechBI is a leading digital transformation company specializing in AI/ML, Cloud Architecture, Custom Software Development, Data Analytics, and Cybersecurity. We transform businesses through boundary-breaking technology.",
   keywords: [
-    "Tech Boundary",
+    "TechBI",
+    "Tech Boundary Imagination",
+    "Digital Transformation",
     "AI",
-    "Quantum Computing",
-    "Neural Interfaces",
-    "Web3",
-    "Future Technology",
-    "WebGL",
-    "Innovation",
+    "Machine Learning",
+    "Cloud Architecture",
+    "Custom Software Development",
+    "Data Analytics",
+    "Cybersecurity",
+    "Enterprise Technology",
+    "IT Consulting",
   ],
   openGraph: {
-    title: "Tech Boundary Imagines",
-    description: "Where the future ceases to be fiction.",
+    title: "TechBI — Tech Boundary Imagination",
+    description: "Leading digital transformation company. From strategy to deployment, we build what moves businesses forward.",
     type: "website",
   },
 };

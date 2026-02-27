@@ -149,7 +149,7 @@ export default function HeroSection() {
             {/* Section badge */}
             <motion.div {...fadeUpProps(0)}>
               <span className="section-badge">
-                Est. 2025 — Future Technology Platform
+                Est. 2025 — Digital Transformation Leader
               </span>
             </motion.div>
 
@@ -178,12 +178,12 @@ export default function HeroSection() {
               {...fadeUpProps(0.2)}
               className="text-base md:text-lg text-white/50 leading-relaxed max-w-md font-light"
             >
-              A pioneering platform at the bleeding edge of human technology —
-              <span className="text-cyan-neon/80"> AI</span>,{" "}
-              <span className="text-purple-electric/80">Quantum Computing</span>,{" "}
-              <span className="text-orange-neon/80">Neural Interfaces</span>, and{" "}
-              <span className="text-cyan-neon/80">Web3</span>. 
-              Imagine the impossible. Build what doesn't exist yet.
+              We architect digital transformation at enterprise scale —
+              <span className="text-cyan-neon/80"> AI & ML</span>,{" "}
+              <span className="text-purple-electric/80">Cloud Architecture</span>,{" "}
+              <span className="text-orange-neon/80">Custom Software</span>, and{" "}
+              <span className="text-cyan-neon/80">Data Analytics</span>.{" "}
+              From strategy to deployment, we turn vision into measurable results.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -197,7 +197,7 @@ export default function HeroSection() {
                     <circle cx="7" cy="7" r="3" fill="currentColor" />
                     <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" />
                   </svg>
-                  Explore the Frontier
+                  Start Your Transformation
                 </span>
               </button>
               <button className="btn-cyber-secondary" data-cursor-hover>
@@ -205,7 +205,7 @@ export default function HeroSection() {
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  Watch Manifesto
+                  View Our Work
                 </span>
               </button>
             </motion.div>
@@ -216,10 +216,10 @@ export default function HeroSection() {
               className="pt-4"
             >
               <div className="divider-gradient mb-6" />
-              <div className="flex gap-10">
-                <Counter end={47} suffix="+" label="Tech Concepts" />
-                <Counter end={12} suffix="+" label="Domains" />
-                <Counter end={200} suffix="K" label="Visionaries" />
+              <div className="flex flex-wrap gap-10 md:gap-14" style={{ display: "flex", flexWrap: "wrap", gap: "2.5rem" }}>
+                <Counter end={150} suffix="+" label="Projects Delivered" />
+                <Counter end={50} suffix="+" label="Enterprise Clients" />
+                <Counter end={98} suffix="%" label="Client Satisfaction" />
               </div>
             </motion.div>
           </motion.div>

@@ -22,10 +22,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Explore", href: "#features" },
-  { label: "Imagine", href: "#imagine" },
-  { label: "Frontier", href: "#frontier" },
-  { label: "Manifesto", href: "#manifesto" },
+  { label: "Services", href: "#services" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Capabilities", href: "#features" },
+  { label: "Contact", href: "#cta" },
 ];
 
 export default function Header() {
@@ -46,11 +46,10 @@ export default function Header() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "glass border-b border-glass-border py-3"
           : "bg-transparent py-5"
-      }`}
+        }`}
     >
       {/* Neon accent line — appears when scrolled */}
       <motion.div
@@ -96,7 +95,7 @@ export default function Header() {
                   backgroundClip: "text",
                 }}
               >
-                Imagines
+                Imagination
               </span>
             </div>
           </Link>
@@ -132,7 +131,7 @@ export default function Header() {
             className="hidden md:block"
           >
             <button className="btn-cyber text-xs">
-              Launch App
+              Get Started
             </button>
           </motion.div>
 
@@ -143,19 +142,16 @@ export default function Header() {
             aria-label="Toggle mobile menu"
           >
             <span
-              className={`block w-6 h-px bg-cyan-neon transition-all duration-300 ${
-                mobileOpen ? "rotate-45 translate-y-2" : ""
-              }`}
+              className={`block w-6 h-px bg-cyan-neon transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""
+                }`}
             />
             <span
-              className={`block w-4 h-px bg-cyan-neon/60 transition-all duration-300 ${
-                mobileOpen ? "opacity-0" : ""
-              }`}
+              className={`block w-4 h-px bg-cyan-neon/60 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
+                }`}
             />
             <span
-              className={`block w-6 h-px bg-cyan-neon transition-all duration-300 ${
-                mobileOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
+              className={`block w-6 h-px bg-cyan-neon transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
             />
           </button>
         </div>
@@ -180,7 +176,7 @@ export default function Header() {
             </Link>
           ))}
           <button className="btn-cyber mt-4 text-xs w-full">
-            Launch App
+            Get Started
           </button>
         </nav>
       </motion.div>

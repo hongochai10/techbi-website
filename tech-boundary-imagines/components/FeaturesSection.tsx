@@ -90,7 +90,7 @@ const NeuralIcon = ({ color }: { color: string }) => (
     <line x1="28" y1="25" x2="20" y2="20" stroke={color} strokeWidth="1" />
     <line x1="20" y1="8" x2="20" y2="20" stroke={color} strokeWidth="1" />
     <circle cx="20" cy="20" r="2.5" fill={color} />
-    {[[12,15],[28,15],[12,25],[28,25],[20,8],[20,32]].map(([cx,cy],i) => (
+    {[[12, 15], [28, 15], [12, 25], [28, 25], [20, 8], [20, 32]].map(([cx, cy], i) => (
       <circle key={i} cx={cx} cy={cy} r="2" fill={color} opacity="0.7" />
     ))}
   </svg>
@@ -101,7 +101,7 @@ const Web3Icon = ({ color }: { color: string }) => (
     <polygon points="20,4 36,14 36,26 20,36 4,26 4,14" stroke={color} strokeWidth="1.2" fill="none" opacity="0.6" />
     <polygon points="20,10 30,16 30,24 20,30 10,24 10,16" stroke={color} strokeWidth="1" fill="none" opacity="0.4" />
     <circle cx="20" cy="20" r="3" fill={color} opacity="0.9" />
-    {[[20,4],[36,14],[36,26],[20,36],[4,26],[4,14]].map(([cx,cy],i) => (
+    {[[20, 4], [36, 14], [36, 26], [20, 36], [4, 26], [4, 14]].map(([cx, cy], i) => (
       <line key={i} x1={cx} y1={cy} x2="20" y2="20" stroke={color} strokeWidth="0.6" opacity="0.3" />
     ))}
   </svg>
@@ -121,7 +121,7 @@ const BioDigitalIcon = ({ color }: { color: string }) => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
     <path d="M20 4 Q28 12, 20 20 Q12 28, 20 36" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" />
     <path d="M20 4 Q12 12, 20 20 Q28 28, 20 36" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6" />
-    {[8,12,16,20,24,28,32].map((y,i) => (
+    {[8, 12, 16, 20, 24, 28, 32].map((y, i) => (
       <line key={i} x1={20 - 5} y1={y} x2={20 + 5} y2={y} stroke={color} strokeWidth="1" opacity="0.4" />
     ))}
     <circle cx="20" cy="20" r="2" fill={color} />
@@ -226,7 +226,6 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const isWide = feature.span === "wide";
   const isTall = feature.span === "tall";
   const isFeatured = feature.featured;
 
@@ -290,9 +289,8 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
       {/* Title */}
       <h3
-        className={`font-bold leading-tight mb-3 relative z-10 ${
-          isFeatured ? "text-2xl md:text-3xl" : "text-lg"
-        }`}
+        className={`font-bold leading-tight mb-3 relative z-10 ${isFeatured ? "text-2xl md:text-3xl" : "text-lg"
+          }`}
         style={{ color: "rgba(255,255,255,0.92)" }}
       >
         {feature.title}
@@ -300,9 +298,8 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
       {/* Description */}
       <p
-        className={`text-white/45 leading-relaxed relative z-10 ${
-          isFeatured ? "text-base max-w-2xl" : "text-sm"
-        }`}
+        className={`text-white/45 leading-relaxed relative z-10 ${isFeatured ? "text-base max-w-2xl" : "text-sm"
+          }`}
       >
         {feature.description}
       </p>
@@ -357,15 +354,15 @@ export default function FeaturesSection() {
           className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
           <div className="flex flex-col gap-4">
-            <span className="section-badge">Technology Domains</span>
+            <span className="section-badge">Our Capabilities</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-white">The Frontier</span>
+              <span className="text-white">Technology</span>
               <br />
-              <span className="gradient-text-cyan">Technologies</span>
+              <span className="gradient-text-cyan">Stack</span>
             </h2>
           </div>
           <p className="text-white/40 max-w-sm text-sm leading-relaxed md:text-right">
-            Seven paradigm-shifting technologies that are actively dissolving the boundary between what is possible and what was once considered science fiction.
+            Seven paradigm-shifting technologies we master to deliver transformative solutions across industries and verticals.
           </p>
         </motion.div>
 
