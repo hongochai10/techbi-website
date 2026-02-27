@@ -21,16 +21,22 @@ interface Service {
 }
 
 /* ── SVG Icons ── */
+/* Pre-computed coords for [0,45,90,135,180,225,270,315] at r=14, center=22 */
+const AIML_COORDS = [
+    { cx: 36, cy: 22 }, { cx: 31.9, cy: 31.9 }, { cx: 22, cy: 36 }, { cx: 12.1, cy: 31.9 },
+    { cx: 8, cy: 22 }, { cx: 12.1, cy: 12.1 }, { cx: 22, cy: 8 }, { cx: 31.9, cy: 12.1 },
+];
+
 const AIMLIcon = ({ color }: { color: string }) => (
     <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
         <circle cx="22" cy="22" r="8" stroke={color} strokeWidth="1.5" />
         <circle cx="22" cy="22" r="3" fill={color} opacity="0.8" />
         <path d="M22 6v6M22 32v6M6 22h6M32 22h6" stroke={color} strokeWidth="1" opacity="0.4" />
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => (
+        {AIML_COORDS.map((c, i) => (
             <circle
                 key={i}
-                cx={22 + 14 * Math.cos((a * Math.PI) / 180)}
-                cy={22 + 14 * Math.sin((a * Math.PI) / 180)}
+                cx={c.cx}
+                cy={c.cy}
                 r="1.5" fill={color} opacity="0.5"
             />
         ))}

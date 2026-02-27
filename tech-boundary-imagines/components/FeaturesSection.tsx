@@ -47,25 +47,34 @@ interface Feature {
   featured?: boolean;
 }
 
-/* ── SVG Icons ── */
+/* Pre-computed coords for angles [0,60,120,180,240,300] at radius 16, center 20 */
+const AI_COORDS = [
+  { x: 36, y: 20 },
+  { x: 28, y: 33.86 },
+  { x: 12, y: 33.86 },
+  { x: 4, y: 20 },
+  { x: 12, y: 6.14 },
+  { x: 28, y: 6.14 },
+];
+
 const AIIcon = ({ color }: { color: string }) => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
     <circle cx="20" cy="20" r="8" stroke={color} strokeWidth="1.5" />
     <circle cx="20" cy="20" r="3" fill={color} opacity="0.8" />
-    {[0, 60, 120, 180, 240, 300].map((angle, i) => (
+    {AI_COORDS.map((c, i) => (
       <line
         key={i}
         x1="20" y1="20"
-        x2={20 + 16 * Math.cos((angle * Math.PI) / 180)}
-        y2={20 + 16 * Math.sin((angle * Math.PI) / 180)}
+        x2={c.x}
+        y2={c.y}
         stroke={color} strokeWidth="1" opacity="0.5"
       />
     ))}
-    {[0, 60, 120, 180, 240, 300].map((angle, i) => (
+    {AI_COORDS.map((c, i) => (
       <circle
         key={i}
-        cx={20 + 16 * Math.cos((angle * Math.PI) / 180)}
-        cy={20 + 16 * Math.sin((angle * Math.PI) / 180)}
+        cx={c.x}
+        cy={c.y}
         r="2" fill={color} opacity="0.7"
       />
     ))}
@@ -128,19 +137,41 @@ const BioDigitalIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
+/* Pre-computed coords for angles [0,45,90,135,180,225,270,315] at radii 6 & 18, center 24 */
+const SYNTH_INNER = [
+  { x: 30, y: 24 },
+  { x: 28.24, y: 28.24 },
+  { x: 24, y: 30 },
+  { x: 19.76, y: 28.24 },
+  { x: 18, y: 24 },
+  { x: 19.76, y: 19.76 },
+  { x: 24, y: 18 },
+  { x: 28.24, y: 19.76 },
+];
+const SYNTH_OUTER = [
+  { x: 42, y: 24 },
+  { x: 36.73, y: 36.73 },
+  { x: 24, y: 42 },
+  { x: 11.27, y: 36.73 },
+  { x: 6, y: 24 },
+  { x: 11.27, y: 11.27 },
+  { x: 24, y: 6 },
+  { x: 36.73, y: 11.27 },
+];
+
 const SynthesisIcon = ({ color }: { color: string }) => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
     <circle cx="24" cy="24" r="18" stroke={color} strokeWidth="1" opacity="0.3" strokeDasharray="4 3" />
     <circle cx="24" cy="24" r="12" stroke={color} strokeWidth="1.2" opacity="0.5" />
     <circle cx="24" cy="24" r="6" stroke={color} strokeWidth="1.5" opacity="0.8" />
     <circle cx="24" cy="24" r="2.5" fill={color} />
-    {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
+    {SYNTH_INNER.map((inner, i) => (
       <line
         key={i}
-        x1={24 + 6 * Math.cos((angle * Math.PI) / 180)}
-        y1={24 + 6 * Math.sin((angle * Math.PI) / 180)}
-        x2={24 + 18 * Math.cos((angle * Math.PI) / 180)}
-        y2={24 + 18 * Math.sin((angle * Math.PI) / 180)}
+        x1={inner.x}
+        y1={inner.y}
+        x2={SYNTH_OUTER[i].x}
+        y2={SYNTH_OUTER[i].y}
         stroke={color} strokeWidth="0.7" opacity="0.35"
       />
     ))}
