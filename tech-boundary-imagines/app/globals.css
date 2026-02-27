@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --void: #050505;
+  --midnight: #070B18;
+  --cyan-neon: #00f3ff;
+  --purple-electric: #b026ff;
+  --orange-neon: #ff6b00;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--void);
+  color: #e8eaf6;
+  font-family: var(--font-space-grotesk);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cyan-neon);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 10px var(--cyan-neon), 0 0 20px rgba(0,243,255,0.5);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0,243,255,0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-dot.hover {
+  width: 12px;
+  height: 12px;
+  background: var(--purple-electric);
+  box-shadow: 0 0 15px var(--purple-electric), 0 0 30px rgba(176,38,255,0.5);
+}
+
+.cursor-ring.hover {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(176,38,255,0.6);
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--midnight);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan-neon), var(--purple-electric));
+  border-radius: 2px;
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+::selection {
+  background: rgba(0, 243, 255, 0.2);
+  color: var(--cyan-neon);
+}
+
+/* ============================================================
+   GLASSMORPHISM
+   ============================================================ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   NEON GLOW UTILITIES
+   ============================================================ */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0,243,255,0.4), 0 0 60px rgba(0,243,255,0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(176,38,255,0.4), 0 0 60px rgba(176,38,255,0.15);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0,243,255,0.6), 0 0 40px rgba(0,243,255,0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 20px rgba(176,38,255,0.6), 0 0 40px rgba(176,38,255,0.3);
+}
+
+/* ============================================================
+   GRADIENT TEXT
+   ============================================================ */
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #00f3ff 0%, #b026ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #ff6b00 0%, #b026ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   CYBERPUNK CTA BUTTON
+   ============================================================ */
+.btn-cyber {
+  position: relative;
+  padding: 14px 36px;
+  background: transparent;
+  border: 1px solid rgba(0, 243, 255, 0.5);
+  color: var(--cyan-neon);
+  font-family: var(--font-space-grotesk);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: none;
+  overflow: hidden;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cyber::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,243,255,0.15), rgba(176,38,255,0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-cyber::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--cyan-neon), var(--purple-electric));
+  z-index: -1;
+  opacity: 0;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: opacity 0.3s ease;
+}
+
+.btn-cyber:hover {
+  color: #fff;
+  box-shadow: 0 0 30px rgba(0,243,255,0.4), 0 0 80px rgba(0,243,255,0.15), inset 0 0 30px rgba(0,243,255,0.05);
+}
+
+.btn-cyber:hover::before {
+  opacity: 1;
+}
+
+.btn-cyber:hover::after {
+  opacity: 0.4;
+}
+
+.btn-cyber-secondary {
+  position: relative;
+  padding: 14px 36px;
+  background: transparent;
+  border: 1px solid rgba(176,38,255,0.4);
+  color: rgba(176,38,255,0.9);
+  font-family: var(--font-space-grotesk);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: none;
+  overflow: hidden;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-cyber-secondary:hover {
+  color: #fff;
+  border-color: rgba(176,38,255,0.8);
+  box-shadow: 0 0 30px rgba(176,38,255,0.35), 0 0 70px rgba(176,38,255,0.12);
+}
+
+/* ============================================================
+   NOISE TEXTURE OVERLAY
+   ============================================================ */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* ============================================================
+   GRID BACKGROUND
+   ============================================================ */
+.bg-grid {
+  background-image: linear-gradient(rgba(0,243,255,0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,243,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ============================================================
+   SCAN LINE EFFECT
+   ============================================================ */
+.scan-line-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,243,255,0.3), transparent);
+  animation: scan-line 8s linear infinite;
+  pointer-events: none;
+}
+
+/* ============================================================
+   HORIZONTAL SCROLL
+   ============================================================ */
+.horizontal-scroll-container {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0 40px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* ============================================================
+   FEATURE CARD
+   ============================================================ */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,243,255,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0,243,255,0.12);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================
+   SECTION HEADING DECORATION
+   ============================================================ */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(0,243,255,0.06);
+  border: 1px solid rgba(0,243,255,0.2);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan-neon);
+}
+
+.section-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--cyan-neon);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--cyan-neon);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   DIVIDER LINE GRADIENT
+   ============================================================ */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,243,255,0.4) 30%, rgba(176,38,255,0.4) 70%, transparent 100%);
+}
+
+/* ============================================================
+   THREE.JS CANVAS
+   ============================================================ */
+.three-canvas-container {
+  position: relative;
+}
+
+.three-canvas-container canvas {
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  .cursor-dot, .cursor-ring {
+    display: none;
+  }
+  .btn-cyber, .btn-cyber-secondary {
+    cursor: pointer;
+  }
+}
