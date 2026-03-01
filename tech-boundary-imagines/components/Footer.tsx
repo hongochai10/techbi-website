@@ -106,7 +106,8 @@ export default function Footer() {
               <div className="flex flex-col leading-none">
                 <span className="text-[10px] font-mono text-emerald-neon/60 tracking-[0.24em] uppercase">Tech Boundary</span>
                 <span
-                  className="text-base font-bold tracking-tight text-white"
+                  className="text-base font-bold tracking-tight transition-colors"
+                  style={{ color: "var(--text-base)" }}
                 >
                   Imagination
                 </span>

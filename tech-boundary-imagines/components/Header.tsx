@@ -88,7 +88,8 @@ export default function Header() {
                 Tech Boundary
               </span>
               <span
-                className="text-[15px] font-bold tracking-tight text-white group-hover:gradient-text-emerald transition-all duration-300"
+                className="text-[15px] font-bold tracking-tight group-hover:gradient-text-emerald transition-all duration-300"
+                style={{ color: "var(--text-base)" }}
               >
                 Imagination
               </span>
