@@ -7,7 +7,7 @@
  * hover effects, and scroll-triggered staggered entrance.
  */
 
-import { useRef, ReactNode } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 

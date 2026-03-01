@@ -179,7 +179,7 @@ const SynthesisIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
-const getFeatures = (tItems: any): Feature[] => [
+const getFeatures = (tItems: (key: string) => string): Feature[] => [
   {
     id: "agi",
     label: tItems("agi.label"),
@@ -406,7 +406,7 @@ export default function FeaturesSection() {
 
         {/* ── Asymmetric Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {FEATURES.map((feature: any, i: any) => (
+          {FEATURES.map((feature: Feature, i: number) => (
             <FeatureCard key={feature.id} feature={feature} index={i} />
           ))}
         </div>

@@ -20,7 +20,7 @@ interface Testimonial {
     accent: string;
 }
 
-const getTestimonials = (tItems: any): Testimonial[] => [
+const getTestimonials = (tItems: (key: string) => string): Testimonial[] => [
     {
         id: "t1",
         quote: tItems("t1.quote"),

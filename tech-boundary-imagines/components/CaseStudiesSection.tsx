@@ -22,7 +22,7 @@ interface CaseStudy {
     glow: string;
 }
 
-const getCaseStudies = (tItems: (key: string, values?: any) => string): CaseStudy[] => [
+const getCaseStudies = (tItems: (key: string) => string): CaseStudy[] => [
     {
         id: "fintech",
         industry: tItems("fintech.industry"),

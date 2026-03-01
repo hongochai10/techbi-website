@@ -26,7 +26,7 @@ export default function CustomCursor() {
 
   const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
-  const animate = useCallback(() => {
+  const animate = useCallback(function animateLoop() {
     ring.current.x = lerp(ring.current.x, target.current.x, 0.12);
     ring.current.y = lerp(ring.current.y, target.current.y, 0.12);
 
@@ -34,7 +34,7 @@ export default function CustomCursor() {
       ringRef.current.style.transform = `translate(${ring.current.x}px, ${ring.current.y}px) translate(-50%, -50%)`;
     }
 
-    rafId.current = requestAnimationFrame(animate);
+    rafId.current = requestAnimationFrame(animateLoop);
   }, []);
 
   useEffect(() => {
