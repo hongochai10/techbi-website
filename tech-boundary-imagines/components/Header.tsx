@@ -20,6 +20,7 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -124,6 +125,7 @@ export default function Header() {
 
         {/* ── CTA + MOBILE TOGGLE ── */}
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

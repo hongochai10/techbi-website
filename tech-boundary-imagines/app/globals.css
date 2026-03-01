@@ -7,6 +7,21 @@
    CUSTOM PROPERTIES
    ============================================================ */
 :root {
+  --void: #f8fafc;
+  --midnight: #f1f5f9;
+  --cyan-neon: #009cb3;
+  --emerald-neon: #00a667;
+  --blue-neon: #0044cc;
+  --blue-deep: #002299;
+  --purple-electric: #8a1fcc;
+  --orange-neon: #cc5500;
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(15, 23, 42, 0.12);
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --text-base: #0f172a;
+}
+
+.dark {
   --void: #050505;
   --midnight: #070B18;
   --cyan-neon: #00f3ff;
@@ -17,7 +32,7 @@
   --orange-neon: #ff6b00;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
-  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --text-base: #e8eaf6;
 }
 
 /* ============================================================
@@ -37,7 +52,7 @@ html {
 
 body {
   background-color: var(--void);
-  color: #e8eaf6;
+  color: var(--text-base);
   font-family: var(--font-space-grotesk);
   overflow-x: hidden;
   cursor: none;

@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        void: "#050505",
-        "midnight-blue": "#070B18",
+        white: "var(--text-base)",
+        void: "var(--void)",
+        "midnight-blue": "var(--midnight)",
         "deep-navy": "#0A0F2A",
         emerald: {
           neon: "#00FF9D",
