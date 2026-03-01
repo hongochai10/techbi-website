@@ -106,13 +106,7 @@ export default function Footer() {
               <div className="flex flex-col leading-none">
                 <span className="text-[10px] font-mono text-emerald-neon/60 tracking-[0.24em] uppercase">Tech Boundary</span>
                 <span
-                  className="text-base font-bold tracking-tight"
-                  style={{
-                    background: "linear-gradient(90deg, #fff, rgba(255,255,255,0.8))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  className="text-base font-bold tracking-tight text-white"
                 >
                   Imagination
                 </span>

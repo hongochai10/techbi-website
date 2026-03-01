@@ -89,12 +89,6 @@ export default function Header() {
               </span>
               <span
                 className="text-[15px] font-bold tracking-tight text-white group-hover:gradient-text-emerald transition-all duration-300"
-                style={{
-                  background: "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.85) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
               >
                 Imagination
               </span>
