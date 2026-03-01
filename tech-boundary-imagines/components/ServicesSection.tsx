@@ -168,8 +168,8 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             }}
             className="feature-card glass rounded-[20px] p-9 group relative overflow-hidden backdrop-blur-3xl"
             style={{
-                background: `linear-gradient(145deg, ${service.glow.replace(/[\d.]+\)$/g, '0.08)')} 0%, rgba(255,255,255,0.01) 100%)`,
-                border: "1px solid rgba(255,255,255,0.04)",
+                background: `linear-gradient(145deg, ${service.glow.replace(/[\d.]+\)$/g, '0.05)')} 0%, var(--card-bg) 100%)`,
+                borderColor: "var(--card-border)",
             }}
             whileHover={{
                 y: -8,
@@ -212,14 +212,14 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
             {/* Title */}
             <h3
-                className="text-2xl font-semibold tracking-tight leading-tight mb-4 relative z-10"
-                style={{ color: "#ffffff" }}
+                className="text-2xl font-semibold tracking-tight leading-tight mb-4 relative z-10 transition-colors"
+                style={{ color: "var(--text-base)" }}
             >
                 {service.title}
             </h3>
 
             {/* Description */}
-            <p className="text-[#B0B5C0] text-[15px] leading-relaxed relative z-10 mb-6">
+            <p className="text-[15px] leading-relaxed relative z-10 mb-6 transition-colors" style={{ color: "var(--text-muted)" }}>
                 {service.description}
             </p>
 
@@ -292,13 +292,13 @@ export default function ServicesSection() {
                 >
                     <div className="flex flex-col gap-4">
                         <span className="section-badge">Our Services</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
-                            <span className="text-white">Digital Transformation</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight transition-colors" style={{ color: "var(--text-base)" }}>
+                            <span>Digital Transformation</span>
                             <br />
                             <span className="gradient-text-emerald">Solutions</span>
                         </h2>
                     </div>
-                    <p className="text-white/40 max-w-sm text-sm leading-relaxed md:text-right">
+                    <p className="max-w-sm text-sm leading-relaxed md:text-right transition-colors" style={{ color: "var(--text-muted)" }}>
                         End-to-end technology services that accelerate innovation,
                         optimize operations, and create measurable business impact.
                     </p>

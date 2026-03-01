@@ -277,8 +277,8 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
         group relative overflow-hidden backdrop-blur-3xl
       `}
       style={{
-        background: `linear-gradient(135deg, ${feature.glowColor.replace(/[\d.]+\)$/g, '0.08)')} 0%, rgba(255,255,255,0.01) 100%)`,
-        border: `1px solid rgba(255,255,255,0.04)`,
+        background: `linear-gradient(135deg, ${feature.glowColor.replace(/[\d.]+\)$/g, '0.05)')} 0%, var(--card-bg) 100%)`,
+        borderColor: "var(--card-border)",
       }}
       whileHover={{
         y: -8,
@@ -321,17 +321,18 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
       {/* Title */}
       <h3
-        className={`font-semibold tracking-tight leading-tight mb-4 relative z-10 ${isFeatured ? "text-3xl md:text-4xl" : "text-xl"
+        className={`font-semibold tracking-tight leading-tight mb-4 relative z-10 transition-colors ${isFeatured ? "text-3xl md:text-4xl" : "text-xl"
           }`}
-        style={{ color: "#ffffff" }}
+        style={{ color: "var(--text-base)" }}
       >
         {feature.title}
       </h3>
 
       {/* Description */}
       <p
-        className={`text-[#B0B5C0] leading-relaxed relative z-10 ${isFeatured ? "text-lg max-w-2xl" : "text-[15px]"
+        className={`leading-relaxed relative z-10 transition-colors ${isFeatured ? "text-lg max-w-2xl" : "text-[15px]"
           }`}
+        style={{ color: "var(--text-muted)" }}
       >
         {feature.description}
       </p>
@@ -387,13 +388,13 @@ export default function FeaturesSection() {
         >
           <div className="flex flex-col gap-4">
             <span className="section-badge">Our Capabilities</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
-              <span className="text-white">Technology</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight transition-colors" style={{ color: "var(--text-base)" }}>
+              <span>Technology</span>
               <br />
               <span className="gradient-text-emerald">Stack</span>
             </h2>
           </div>
-          <p className="text-white/40 max-w-sm text-sm leading-relaxed md:text-right">
+          <p className="max-w-sm text-sm leading-relaxed md:text-right transition-colors" style={{ color: "var(--text-muted)" }}>
             Seven paradigm-shifting technologies we master to deliver transformative solutions across industries and verticals.
           </p>
         </motion.div>

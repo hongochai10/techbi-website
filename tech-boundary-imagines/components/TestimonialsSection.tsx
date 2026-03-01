@@ -86,8 +86,8 @@ export default function TestimonialsSection() {
 
             {/* Top fade */}
             <div
-                className="absolute top-0 left-0 right-0 h-32"
-                style={{ background: "linear-gradient(180deg, #050505, transparent)" }}
+                className="absolute top-0 left-0 right-0 h-32 transition-colors"
+                style={{ background: "linear-gradient(180deg, var(--void), transparent)" }}
                 aria-hidden="true"
             />
 
@@ -102,8 +102,8 @@ export default function TestimonialsSection() {
                     <span className="section-badge mb-4 inline-flex" style={{ color: "#b026ff", borderColor: "rgba(176,38,255,0.3)", background: "rgba(176,38,255,0.06)" }}>
                         Testimonials
                     </span>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-4">
-                        <span className="text-white">What Our</span>{" "}
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-4 transition-colors" style={{ color: "var(--text-base)" }}>
+                        <span>What Our</span>{" "}
                         <span
                             style={{
                                 background: "linear-gradient(135deg, #b026ff, #00FF9D)",
@@ -148,7 +148,7 @@ export default function TestimonialsSection() {
                             </div>
 
                             {/* Quote text */}
-                            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 relative z-10">
+                            <p className="text-lg md:text-xl leading-relaxed mb-10 relative z-10 transition-colors" style={{ color: "var(--text-base)" }}>
                                 {t.quote}
                             </p>
 
@@ -166,8 +166,8 @@ export default function TestimonialsSection() {
                                     {t.author.split(" ").map((n) => n[0]).join("")}
                                 </div>
                                 <div>
-                                    <div className="text-white font-semibold text-sm">{t.author}</div>
-                                    <div className="text-white/40 text-xs">
+                                    <div className="font-semibold text-sm transition-colors" style={{ color: "var(--text-base)" }}>{t.author}</div>
+                                    <div className="text-xs transition-colors" style={{ color: "var(--text-muted)" }}>
                                         {t.role}, {t.company}
                                     </div>
                                 </div>
@@ -203,8 +203,8 @@ export default function TestimonialsSection() {
 
             {/* Bottom fade */}
             <div
-                className="absolute bottom-0 left-0 right-0 h-32"
-                style={{ background: "linear-gradient(0deg, #050505, transparent)" }}
+                className="absolute bottom-0 left-0 right-0 h-32 transition-colors"
+                style={{ background: "linear-gradient(0deg, var(--void), transparent)" }}
                 aria-hidden="true"
             />
         </section>

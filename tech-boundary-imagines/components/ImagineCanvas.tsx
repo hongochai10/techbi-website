@@ -114,8 +114,8 @@ function ConceptCard({ concept, index }: { concept: Concept; index: number }) {
       style={{
         width: "clamp(280px, 75vw, 360px)",
         height: "clamp(380px, 55vw, 480px)",
-        background: "linear-gradient(145deg, #0A0F2A 0%, #050505 100%)",
-        border: `1px solid rgba(255,255,255,0.07)`,
+        background: `linear-gradient(145deg, ${concept.glow.replace(/[\d.]+\)$/g, '0.1)')} 0%, var(--card-bg) 100%)`,
+        border: `1px solid var(--card-border)`,
         cursor: "grab",
       }}
       whileHover={{
@@ -169,11 +169,11 @@ function ConceptCard({ concept, index }: { concept: Concept; index: number }) {
             }}
           />
 
-          <h3 className="text-2xl font-bold text-white leading-tight mb-3">
+          <h3 className="text-2xl font-bold leading-tight mb-3 transition-colors" style={{ color: "var(--text-base)" }}>
             {concept.title}
           </h3>
 
-          <p className="text-white/40 text-sm leading-relaxed mb-6">
+          <p className="text-sm leading-relaxed mb-6 transition-colors" style={{ color: "var(--text-muted)" }}>
             {concept.teaser}
           </p>
 
@@ -272,8 +272,8 @@ export default function ImagineCanvas() {
             <span className="section-badge" style={{ color: "#b026ff", borderColor: "rgba(176,38,255,0.3)", background: "rgba(176,38,255,0.06)" }}>
               Imagine Canvas
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-              <span className="text-white">Breakthrough</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold transition-colors" style={{ color: "var(--text-base)" }}>
+              <span>Breakthrough</span>
               <br />
               <span
                 style={{
@@ -294,22 +294,24 @@ export default function ImagineCanvas() {
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               data-cursor-hover
-              className="w-12 h-12 rounded-full glass border border-glass-border flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-emerald-neon/50 hover:shadow-neon-emerald"
+              className="w-12 h-12 rounded-full glass flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-emerald-neon/50 hover:shadow-neon-emerald"
               aria-label="Scroll left"
+              style={{ color: "var(--text-base)", borderColor: "var(--glass-border)" }}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/70" />
+                <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               data-cursor-hover
-              className="w-12 h-12 rounded-full glass border border-glass-border flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-emerald-neon/50 hover:shadow-neon-emerald"
+              className="w-12 h-12 rounded-full glass flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-emerald-neon/50 hover:shadow-neon-emerald"
               aria-label="Scroll right"
+              style={{ color: "var(--text-base)", borderColor: "var(--glass-border)" }}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/70" />
+                <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
@@ -337,13 +339,13 @@ export default function ImagineCanvas() {
 
       {/* Fade edges */}
       <div
-        className="absolute top-0 left-0 w-24 h-full pointer-events-none z-10"
-        style={{ background: "linear-gradient(90deg, #050505, transparent)" }}
+        className="absolute top-0 left-0 w-24 h-full pointer-events-none z-10 transition-colors"
+        style={{ background: "linear-gradient(90deg, var(--void), transparent)" }}
         aria-hidden="true"
       />
       <div
-        className="absolute top-0 right-0 w-24 h-full pointer-events-none z-10"
-        style={{ background: "linear-gradient(-90deg, #050505, transparent)" }}
+        className="absolute top-0 right-0 w-24 h-full pointer-events-none z-10 transition-colors"
+        style={{ background: "linear-gradient(-90deg, var(--void), transparent)" }}
         aria-hidden="true"
       />
     </section>

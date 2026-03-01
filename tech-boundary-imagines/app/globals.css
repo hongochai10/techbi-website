@@ -7,18 +7,21 @@
    CUSTOM PROPERTIES
    ============================================================ */
 :root {
-  --void: #f8fafc;
-  --midnight: #f1f5f9;
+  --void: #ffffff;
+  --midnight: #f8fafc;
   --cyan-neon: #009cb3;
-  --emerald-neon: #00a667;
+  --emerald-neon: #008855;
   --blue-neon: #0044cc;
   --blue-deep: #002299;
   --purple-electric: #8a1fcc;
   --orange-neon: #cc5500;
-  --glass-bg: rgba(255, 255, 255, 0.5);
-  --glass-border: rgba(15, 23, 42, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
   --font-space-grotesk: 'Space Grotesk', sans-serif;
   --text-base: #0f172a;
+  --text-muted: #475569;
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-border: rgba(0, 0, 0, 0.05);
 }
 
 .dark {
@@ -33,6 +36,9 @@
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
   --text-base: #e8eaf6;
+  --text-muted: #B0B5C0;
+  --card-bg: rgba(255, 255, 255, 0.01);
+  --card-border: rgba(255, 255, 255, 0.04);
 }
 
 /* ============================================================
@@ -138,10 +144,10 @@ body {
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.07);
+  background: var(--card-bg);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--card-border);
 }
 
 /* ============================================================

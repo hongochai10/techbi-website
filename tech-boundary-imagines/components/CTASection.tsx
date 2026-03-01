@@ -23,10 +23,10 @@ export default function CTASection() {
         >
             {/* Dramatic gradient background */}
             <div
-                className="absolute inset-0"
+                className="absolute inset-0 transition-colors"
                 style={{
                     background:
-                        "linear-gradient(135deg, #050505 0%, #0A0F2A 30%, #12082B 50%, #0A0F2A 70%, #050505 100%)",
+                        "linear-gradient(135deg, var(--void) 0%, var(--midnight) 30%, var(--card-bg) 50%, var(--midnight) 70%, var(--void) 100%)",
                 }}
             />
 
@@ -69,9 +69,10 @@ export default function CTASection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.7, delay: 0.15 }}
-                    className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
+                    className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 transition-colors"
+                    style={{ color: "var(--text-base)" }}
                 >
-                    <span className="text-white">Ready to </span>
+                    <span>Ready to </span>
                     <span
                         style={{
                             background: "linear-gradient(135deg, #00FF9D 0%, #b026ff 50%, #0055FF 100%)",
@@ -83,7 +84,7 @@ export default function CTASection() {
                         Transform
                     </span>
                     <br />
-                    <span className="text-white">Your Business?</span>
+                    <span>Your Business?</span>
                 </motion.h2>
 
                 {/* Sub-heading */}
@@ -91,7 +92,8 @@ export default function CTASection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.7, delay: 0.25 }}
-                    className="text-lg md:text-xl text-white/45 max-w-2xl mx-auto mb-12 leading-relaxed"
+                    className="text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed transition-colors"
+                    style={{ color: "var(--text-muted)" }}
                 >
                     Let&apos;s architect something extraordinary together. From strategy
                     to deployment, we&apos;re your end-to-end technology partner.
@@ -146,7 +148,7 @@ export default function CTASection() {
                             <span className="text-xl font-bold font-mono gradient-text-emerald">
                                 {stat.value}
                             </span>
-                            <span className="text-[10px] text-white/30 tracking-widest uppercase font-mono">
+                            <span className="text-[10px] tracking-widest uppercase font-mono transition-colors opacity-40" style={{ color: "var(--text-base)" }}>
                                 {stat.label}
                             </span>
                         </div>

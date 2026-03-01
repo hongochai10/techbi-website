@@ -119,13 +119,13 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-white/35 text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed transition-colors" style={{ color: "var(--text-muted)" }}>
               A leading digital transformation company architecting the future of enterprise technology. From strategy to deployment — we build what moves businesses forward.
             </p>
 
             {/* Newsletter */}
             <div className="flex flex-col gap-2">
-              <label className="text-[11px] text-white/40 tracking-widest uppercase font-mono" htmlFor="newsletter-email">
+              <label className="text-[11px] tracking-widest uppercase font-mono transition-colors opacity-60" style={{ color: "var(--text-base)" }} htmlFor="newsletter-email">
                 Join the Frontier
               </label>
               <div className="flex gap-2">
@@ -133,8 +133,8 @@ export default function Footer() {
                   id="newsletter-email"
                   type="email"
                   placeholder="you@thefuture.com"
-                  className="flex-1 bg-glass border border-glass-border rounded px-4 py-2.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-emerald-neon/50 transition-colors duration-300"
-                  style={{ backdropFilter: "blur(10px)" }}
+                  className="flex-1 bg-glass border border-glass-border rounded px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-neon/50 transition-colors duration-300"
+                  style={{ backdropFilter: "blur(10px)", color: "var(--text-base)" }}
                 />
                 <button className="btn-cyber text-xs px-5 py-2.5" data-cursor-hover>
                   →
@@ -149,7 +149,8 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-10 h-10 glass border border-glass-border rounded-lg flex items-center justify-center text-white/40 hover:text-emerald-neon hover:border-emerald-neon/40 hover:shadow-neon-emerald transition-all duration-300"
+                  className="w-10 h-10 glass border border-glass-border rounded-lg flex items-center justify-center hover:border-emerald-neon/40 hover:shadow-neon-emerald transition-all duration-300"
+                  style={{ color: "var(--text-muted)" }}
                   data-cursor-hover
                 >
                   {s.icon}
@@ -167,7 +168,7 @@ export default function Footer() {
           >
             {FOOTER_LINKS.map((col) => (
               <div key={col.heading} className="flex flex-col gap-4">
-                <h4 className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-white/30">
+                <h4 className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase transition-colors opacity-60" style={{ color: "var(--text-base)" }}>
                   {col.heading}
                 </h4>
                 <ul className="flex flex-col gap-2.5">
@@ -175,7 +176,8 @@ export default function Footer() {
                     <li key={link}>
                       <Link
                         href="#"
-                        className="text-sm text-white/45 hover:text-white/90 transition-colors duration-300"
+                        className="text-sm hover:opacity-100 transition-opacity duration-300"
+                        style={{ color: "var(--text-muted)", opacity: 0.8 }}
                         data-cursor-hover
                       >
                         {link}
@@ -192,7 +194,7 @@ export default function Footer() {
         <div className="divider-gradient mb-8" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/25 font-mono">
+          <p className="text-xs font-mono transition-colors opacity-40" style={{ color: "var(--text-base)" }}>
             © 2025 Tech Boundary Imagination. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -200,7 +202,8 @@ export default function Footer() {
               <Link
                 key={item}
                 href="#"
-                className="text-xs text-white/25 hover:text-white/60 transition-colors duration-300 font-mono"
+                className="text-xs transition-opacity duration-300 font-mono hover:opacity-100"
+                style={{ color: "var(--text-muted)", opacity: 0.6 }}
                 data-cursor-hover
               >
                 {item}

@@ -122,9 +122,9 @@ export default function HeroSection() {
 
       {/* 3. Corner vignette */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 transition-colors"
         style={{
-          background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, #050505 100%)",
+          background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, var(--void) 100%)",
         }}
         aria-hidden="true"
       />
@@ -156,13 +156,14 @@ export default function HeroSection() {
             {/* H1 Tagline */}
             <motion.h1
               {...fadeUpProps(0.1)}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight transition-colors"
+              style={{ color: "var(--text-base)" }}
             >
-              <span className="block text-white">Beyond</span>
+              <span className="block">Beyond</span>
               <span className="block gradient-text-emerald text-glow-emerald">
                 Boundaries.
               </span>
-              <span className="block text-white/90">Beyond</span>
+              <span className="block" style={{ opacity: 0.9 }}>Beyond</span>
               <span className="block" style={{
                 background: "linear-gradient(135deg, #00FF9D 0%, #b026ff 60%, #0033FF 100%)",
                 WebkitBackgroundClip: "text",
@@ -176,7 +177,8 @@ export default function HeroSection() {
             {/* Sub-copy */}
             <motion.p
               {...fadeUpProps(0.2)}
-              className="text-base md:text-lg text-[#B0B5C0] leading-relaxed max-w-md font-light"
+              className="text-base md:text-lg leading-relaxed max-w-md font-light transition-colors"
+              style={{ color: "var(--text-muted)" }}
             >
               We architect digital transformation at enterprise scale —
               <span className="text-emerald-neon/80"> AI & ML</span>,{" "}
@@ -236,7 +238,7 @@ export default function HeroSection() {
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] tracking-[0.3em] uppercase text-white/30 font-mono">
+        <span className="text-[10px] tracking-[0.3em] uppercase font-mono transition-colors opacity-30" style={{ color: "var(--text-base)" }}>
           Scroll
         </span>
         <div className="w-px h-10 overflow-hidden relative">

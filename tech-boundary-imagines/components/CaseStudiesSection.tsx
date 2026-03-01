@@ -19,7 +19,6 @@ interface CaseStudy {
     metricLabel: string;
     accent: string;
     glow: string;
-    gradient: string;
 }
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -33,7 +32,6 @@ const CASE_STUDIES: CaseStudy[] = [
         metricLabel: "Processing Speed Increase",
         accent: "#00FF9D",
         glow: "rgba(0,255,157,0.15)",
-        gradient: "linear-gradient(145deg, rgba(0,255,157,0.08) 0%, rgba(10,15,42,0.95) 100%)",
     },
     {
         id: "healthcare",
@@ -45,7 +43,6 @@ const CASE_STUDIES: CaseStudy[] = [
         metricLabel: "Reduction in Diagnostic Time",
         accent: "#b026ff",
         glow: "rgba(176,38,255,0.15)",
-        gradient: "linear-gradient(145deg, rgba(176,38,255,0.08) 0%, rgba(10,15,42,0.95) 100%)",
     },
     {
         id: "ecommerce",
@@ -57,7 +54,6 @@ const CASE_STUDIES: CaseStudy[] = [
         metricLabel: "Additional Revenue in 6 Months",
         accent: "#0055FF",
         glow: "rgba(0,85,255,0.15)",
-        gradient: "linear-gradient(145deg, rgba(0,85,255,0.08) 0%, rgba(10,15,42,0.95) 100%)",
     },
 ];
 
@@ -77,8 +73,8 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
             }}
             className="group relative rounded-2xl overflow-hidden"
             style={{
-                background: study.gradient,
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: `linear-gradient(145deg, ${study.glow.replace(/[\d.]+\)$/g, '0.08)')} 0%, var(--card-bg) 100%)`,
+                border: "1px solid var(--card-border)",
                 minHeight: "380px",
             }}
             whileHover={{
@@ -120,7 +116,7 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
                     <span
                         className="text-5xl md:text-6xl font-bold font-mono block mb-1"
                         style={{
-                            background: `linear-gradient(135deg, ${study.accent}, rgba(255,255,255,0.8))`,
+                            background: `linear-gradient(135deg, ${study.accent}, var(--text-base))`,
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
@@ -128,17 +124,17 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
                     >
                         {study.metric}
                     </span>
-                    <span className="text-xs text-white/40 tracking-widest uppercase font-mono">
+                    <span className="text-xs tracking-widest uppercase font-mono transition-colors" style={{ color: "var(--text-muted)" }}>
                         {study.metricLabel}
                     </span>
                 </div>
 
                 {/* Title + description at bottom */}
                 <div className="mt-auto">
-                    <h3 className="text-xl md:text-2xl font-bold text-white leading-tight mb-3">
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight mb-3 transition-colors" style={{ color: "var(--text-base)" }}>
                         {study.title}
                     </h3>
-                    <p className="text-white/40 text-sm leading-relaxed mb-5 max-w-lg">
+                    <p className="text-sm leading-relaxed mb-5 max-w-lg transition-colors" style={{ color: "var(--text-muted)" }}>
                         {study.description}
                     </p>
                     <button
@@ -212,13 +208,13 @@ export default function CaseStudiesSection() {
                         >
                             Case Studies
                         </span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                            <span className="text-white">Proven</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight transition-colors" style={{ color: "var(--text-base)" }}>
+                            <span>Proven</span>
                             <br />
                             <span className="gradient-text-warm">Results</span>
                         </h2>
                     </div>
-                    <p className="text-white/40 max-w-sm text-sm leading-relaxed md:text-right">
+                    <p className="max-w-sm text-sm leading-relaxed md:text-right transition-colors" style={{ color: "var(--text-muted)" }}>
                         Real projects. Measurable impact. We deliver transformation
                         that moves the needle for enterprise clients.
                     </p>
