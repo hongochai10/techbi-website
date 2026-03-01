@@ -22,15 +22,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import { Logo } from "./Logo";
-
-const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Capabilities", href: "#features" },
-  { label: "Contact", href: "#cta" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("Header");
+  const tNav = useTranslations("Header.nav");
+  const NAV_LINKS = [
+    { label: tNav("services"), href: "#services" },
+    { label: tNav("caseStudies"), href: "#case-studies" },
+    { label: tNav("capabilities"), href: "#features" },
+    { label: tNav("contact"), href: "#cta" },
+  ];
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -97,6 +101,7 @@ export default function Header() {
 
         {/* ── CTA + MOBILE TOGGLE ── */}
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
           <ThemeToggle />
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -105,7 +110,7 @@ export default function Header() {
             className="hidden md:block"
           >
             <button className="btn-cyber text-xs">
-              Get Started
+              {t("cta")}
             </button>
           </motion.div>
 
@@ -151,7 +156,7 @@ export default function Header() {
             </Link>
           ))}
           <button className="btn-cyber mt-4 text-xs w-full">
-            Get Started
+            {t("cta")}
           </button>
         </nav>
       </motion.div>

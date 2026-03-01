@@ -9,6 +9,7 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface Testimonial {
     id: string;
@@ -19,44 +20,45 @@ interface Testimonial {
     accent: string;
 }
 
-const TESTIMONIALS: Testimonial[] = [
+const getTestimonials = (tItems: any): Testimonial[] => [
     {
         id: "t1",
-        quote:
-            "TechBI didn't just deliver a product — they architected a competitive advantage. Our platform now processes 10x the volume at half the cost. The engineering depth and strategic thinking are world-class.",
-        author: "Sarah Chen",
-        role: "CTO",
-        company: "NovaPay Financial",
+        quote: tItems("t1.quote"),
+        author: tItems("t1.author"),
+        role: tItems("t1.role"),
+        company: tItems("t1.company"),
         accent: "rgb(var(--emerald-neon))",
     },
     {
         id: "t2",
-        quote:
-            "Working with TechBI felt like adding a senior engineering team overnight. Their AI diagnostic platform reduced our reporting cycle from weeks to hours, and their team understood healthcare compliance from day one.",
-        author: "Dr. Marcus Rivera",
-        role: "VP of Innovation",
-        company: "MedCore Health Systems",
+        quote: tItems("t2.quote"),
+        author: tItems("t2.author"),
+        role: tItems("t2.role"),
+        company: tItems("t2.company"),
         accent: "rgb(var(--purple-electric))",
     },
     {
         id: "t3",
-        quote:
-            "From strategy to execution, TechBI is the real deal. They transformed our entire digital infrastructure — cloud migration, microservices, real-time analytics — all delivered ahead of schedule. Best tech partner we've ever had.",
-        author: "James Whitfield",
-        role: "CEO",
-        company: "Vertex Commerce Group",
+        quote: tItems("t3.quote"),
+        author: tItems("t3.author"),
+        role: tItems("t3.role"),
+        company: tItems("t3.company"),
         accent: "rgb(var(--blue-neon))",
     },
 ];
 
 export default function TestimonialsSection() {
+    const t = useTranslations("Testimonials");
+    const tItems = useTranslations("Testimonials.items");
+    const TESTIMONIALS = getTestimonials(tItems);
+
     const sectionRef = useRef<HTMLDivElement>(null);
     const inView = useInView(sectionRef, { once: true });
     const [active, setActive] = useState(0);
 
     const next = useCallback(() => {
         setActive((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, []);
+    }, [TESTIMONIALS.length]);
 
     // Auto-rotate every 6s
     useEffect(() => {
@@ -64,7 +66,7 @@ export default function TestimonialsSection() {
         return () => clearInterval(timer);
     }, [next]);
 
-    const t = TESTIMONIALS[active];
+    const currentTestimonial = TESTIMONIALS[active];
 
     return (
         <section
@@ -100,10 +102,10 @@ export default function TestimonialsSection() {
                     className="text-center mb-16"
                 >
                     <span className="section-badge mb-4 inline-flex" style={{ color: "#b026ff", borderColor: "rgba(176,38,255,0.3)", background: "rgba(176,38,255,0.06)" }}>
-                        Testimonials
+                        {t("header.badge")}
                     </span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-4 transition-colors" style={{ color: "var(--text-base)" }}>
-                        <span>What Our</span>{" "}
+                        <span>{t("header.p1")}</span>{" "}
                         <span
                             style={{
                                 background: "linear-gradient(135deg, #b026ff, #00FF9D)",
@@ -112,7 +114,7 @@ export default function TestimonialsSection() {
                                 backgroundClip: "text",
                             }}
                         >
-                            Clients Say
+                            {t("header.p2")}
                         </span>
                     </h2>
                 </motion.div>
@@ -121,35 +123,35 @@ export default function TestimonialsSection() {
                 <div className="relative min-h-[320px]">
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={t.id}
+                            key={currentTestimonial.id}
                             initial={{ opacity: 0, y: 20, scale: 0.98 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -20, scale: 0.98 }}
                             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                             className="glass-strong rounded-2xl p-10 md:p-14 relative overflow-hidden"
                             style={{
-                                borderLeft: `3px solid ${t.accent}`,
+                                borderLeft: `3px solid ${currentTestimonial.accent}`,
                             }}
                         >
                             {/* Background glow */}
                             <div
                                 className="absolute inset-0 pointer-events-none opacity-30"
                                 style={{
-                                    background: `radial-gradient(ellipse 40% 50% at 0% 50%, rgba(var(${t.id === 't1' ? '--emerald-neon' : t.id === 't2' ? '--purple-electric' : '--blue-neon'}), 0.15) 0%, transparent 70%)`,
+                                    background: `radial-gradient(ellipse 40% 50% at 0% 50%, rgba(var(${currentTestimonial.id === 't1' ? '--emerald-neon' : currentTestimonial.id === 't2' ? '--purple-electric' : '--blue-neon'}), 0.15) 0%, transparent 70%)`,
                                 }}
                             />
 
                             {/* Quote mark */}
                             <div
                                 className="text-6xl md:text-7xl font-serif leading-none mb-6 opacity-20"
-                                style={{ color: t.accent }}
+                                style={{ color: currentTestimonial.accent }}
                             >
                                 &ldquo;
                             </div>
 
                             {/* Quote text */}
                             <p className="text-lg md:text-xl leading-relaxed mb-10 relative z-10 transition-colors" style={{ color: "var(--text-base)" }}>
-                                {t.quote}
+                                {currentTestimonial.quote}
                             </p>
 
                             {/* Author info */}
@@ -158,17 +160,17 @@ export default function TestimonialsSection() {
                                 <div
                                     className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
                                     style={{
-                                        background: `linear-gradient(135deg, ${t.accent}30, ${t.accent}10)`,
-                                        border: `1px solid ${t.accent}40`,
-                                        color: t.accent,
+                                        background: `linear-gradient(135deg, ${currentTestimonial.accent}30, ${currentTestimonial.accent}10)`,
+                                        border: `1px solid ${currentTestimonial.accent}40`,
+                                        color: currentTestimonial.accent,
                                     }}
                                 >
-                                    {t.author.split(" ").map((n) => n[0]).join("")}
+                                    {currentTestimonial.author.split(" ").map((n: string) => n[0]).join("")}
                                 </div>
                                 <div>
-                                    <div className="font-semibold text-sm transition-colors" style={{ color: "var(--text-base)" }}>{t.author}</div>
+                                    <div className="font-semibold text-sm transition-colors" style={{ color: "var(--text-base)" }}>{currentTestimonial.author}</div>
                                     <div className="text-xs transition-colors" style={{ color: "var(--text-muted)" }}>
-                                        {t.role}, {t.company}
+                                        {currentTestimonial.role}, {currentTestimonial.company}
                                     </div>
                                 </div>
                             </div>

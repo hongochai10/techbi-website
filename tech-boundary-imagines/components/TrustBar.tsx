@@ -9,6 +9,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 /* ── Placeholder logos as SVG components ── */
 const logos = [
@@ -45,6 +46,7 @@ function LogoItem({ name, text }: { name: string; text: string }) {
 export default function TrustBar() {
     const ref = useRef<HTMLDivElement>(null);
     const inView = useInView(ref, { once: true });
+    const t = useTranslations("TrustBar");
 
     return (
         <section
@@ -60,7 +62,7 @@ export default function TrustBar() {
                 className="text-center mb-8"
             >
                 <span className="text-[11px] font-mono tracking-[0.25em] uppercase transition-colors" style={{ color: "var(--text-base)", opacity: 0.3 }}>
-                    Trusted by innovative companies worldwide
+                    {t("label")}
                 </span>
             </motion.div>
 

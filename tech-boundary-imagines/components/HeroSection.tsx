@@ -33,8 +33,9 @@
  */
 
 import dynamic from "next/dynamic";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 // Dynamic import — avoids SSR for Three.js canvas
 const HeroScene = dynamic(() => import("./HeroScene"), {
@@ -101,6 +102,7 @@ export default function HeroSection() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const canvasScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const bgOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const t = useTranslations("Hero");
 
   return (
     <section
@@ -149,7 +151,7 @@ export default function HeroSection() {
             {/* Section badge */}
             <motion.div {...fadeUpProps(0)}>
               <span className="section-badge">
-                Est. 2025 — Digital Transformation Leader
+                {t("badge")}
               </span>
             </motion.div>
 
@@ -159,18 +161,18 @@ export default function HeroSection() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight transition-colors"
               style={{ color: "var(--text-base)" }}
             >
-              <span className="block">Beyond</span>
+              <span className="block">{t("tagline.p1")}</span>
               <span className="block gradient-text-emerald text-glow-emerald">
-                Boundaries.
+                {t("tagline.p2")}
               </span>
-              <span className="block" style={{ opacity: 0.9 }}>Beyond</span>
+              <span className="block" style={{ opacity: 0.9 }}>{t("tagline.p3")}</span>
               <span className="block" style={{
                 background: "linear-gradient(135deg, #00FF9D 0%, #b026ff 60%, #0033FF 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>
-                Imagination.
+                {t("tagline.p4")}
               </span>
             </motion.h1>
 
@@ -180,12 +182,12 @@ export default function HeroSection() {
               className="text-base md:text-lg leading-relaxed max-w-md font-light transition-colors"
               style={{ color: "var(--text-muted)" }}
             >
-              We architect digital transformation at enterprise scale —
-              <span className="text-emerald-neon/80"> AI & ML</span>,{" "}
-              <span className="text-purple-electric/80">Cloud Architecture</span>,{" "}
-              <span className="text-blue-neon/80">Custom Software</span>, and{" "}
-              <span className="text-emerald-neon/80">Data Analytics</span>.{" "}
-              From strategy to deployment, we turn vision into measurable results.
+              {t.rich("description", {
+                ai: (chunks: ReactNode) => <span className="text-emerald-neon/80">{chunks}</span>,
+                cloud: (chunks: ReactNode) => <span className="text-purple-electric/80">{chunks}</span>,
+                software: (chunks: ReactNode) => <span className="text-blue-neon/80">{chunks}</span>,
+                data: (chunks: ReactNode) => <span className="text-emerald-neon/80">{chunks}</span>
+              })}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -199,7 +201,7 @@ export default function HeroSection() {
                     <circle cx="7" cy="7" r="3" fill="currentColor" />
                     <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" />
                   </svg>
-                  Start Your Transformation
+                  {t("ctaPrimary")}
                 </span>
               </button>
               <button className="btn-cyber-secondary" data-cursor-hover>
@@ -207,7 +209,7 @@ export default function HeroSection() {
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  View Our Work
+                  {t("ctaSecondary")}
                 </span>
               </button>
             </motion.div>
@@ -219,9 +221,9 @@ export default function HeroSection() {
             >
               <div className="divider-gradient mb-6" />
               <div className="flex flex-wrap gap-10 md:gap-14" style={{ display: "flex", flexWrap: "wrap", gap: "2.5rem" }}>
-                <Counter end={150} suffix="+" label="Projects Delivered" />
-                <Counter end={50} suffix="+" label="Enterprise Clients" />
-                <Counter end={98} suffix="%" label="Client Satisfaction" />
+                <Counter end={150} suffix="+" label={t("stats.projects")} />
+                <Counter end={50} suffix="+" label={t("stats.clients")} />
+                <Counter end={98} suffix="%" label={t("stats.satisfaction")} />
               </div>
             </motion.div>
           </motion.div>
@@ -239,7 +241,7 @@ export default function HeroSection() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
       >
         <span className="text-[10px] tracking-[0.3em] uppercase font-mono transition-colors opacity-30" style={{ color: "var(--text-base)" }}>
-          Scroll
+          {t("scroll")}
         </span>
         <div className="w-px h-10 overflow-hidden relative">
           <motion.div

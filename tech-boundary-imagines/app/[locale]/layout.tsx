@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "../components/ThemeProvider";
+import "../globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -45,26 +49,39 @@ export const viewport: Viewport = {
   themeColor: "#050505",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as "en" | "vi")) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <body className="noise-overlay antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

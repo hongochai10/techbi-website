@@ -9,6 +9,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface CaseStudy {
     id: string;
@@ -21,37 +22,34 @@ interface CaseStudy {
     glow: string;
 }
 
-const CASE_STUDIES: CaseStudy[] = [
+const getCaseStudies = (tItems: (key: string, values?: any) => string): CaseStudy[] => [
     {
         id: "fintech",
-        industry: "FinTech",
-        title: "Next-Gen Payment Processing Platform",
-        description:
-            "Architected a microservices-based payment gateway handling 50M+ daily transactions with sub-100ms latency. Migrated from monolith to event-driven architecture on Kubernetes.",
+        industry: tItems("fintech.industry"),
+        title: tItems("fintech.title"),
+        description: tItems("fintech.description"),
         metric: "300%",
-        metricLabel: "Processing Speed Increase",
+        metricLabel: tItems("fintech.metricLabel"),
         accent: "rgb(var(--emerald-neon))",
         glow: "rgba(var(--emerald-neon), 0.15)",
     },
     {
         id: "healthcare",
-        industry: "Healthcare AI",
-        title: "AI-Powered Diagnostic Intelligence",
-        description:
-            "Built a deep learning diagnostic platform that analyzes medical imaging with 97.3% accuracy. Integrated with hospital EHR systems across 200+ facilities nationwide.",
+        industry: tItems("healthcare.industry"),
+        title: tItems("healthcare.title"),
+        description: tItems("healthcare.description"),
         metric: "85%",
-        metricLabel: "Reduction in Diagnostic Time",
+        metricLabel: tItems("healthcare.metricLabel"),
         accent: "rgb(var(--purple-electric))",
         glow: "rgba(var(--purple-electric), 0.15)",
     },
     {
         id: "ecommerce",
-        industry: "E-Commerce",
-        title: "Enterprise Commerce Transformation",
-        description:
-            "End-to-end digital transformation of a Fortune 500 retail platform. Real-time inventory, AI recommendations, and omnichannel orchestration serving 12M monthly active users.",
+        industry: tItems("ecommerce.industry"),
+        title: tItems("ecommerce.title"),
+        description: tItems("ecommerce.description"),
         metric: "$2.4M",
-        metricLabel: "Additional Revenue in 6 Months",
+        metricLabel: tItems("ecommerce.metricLabel"),
         accent: "rgb(var(--blue-neon))",
         glow: "rgba(var(--blue-neon), 0.15)",
     },
@@ -168,6 +166,10 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
 }
 
 export default function CaseStudiesSection() {
+    const t = useTranslations("CaseStudies");
+    const tItems = useTranslations("CaseStudies.items");
+    const CASE_STUDIES = getCaseStudies(tItems);
+
     const headerRef = useRef<HTMLDivElement>(null);
     const headerInView = useInView(headerRef, { once: true });
 
@@ -206,17 +208,16 @@ export default function CaseStudiesSection() {
                                 background: "rgba(0,85,255,0.06)",
                             }}
                         >
-                            Case Studies
+                            {t("header.badge")}
                         </span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight transition-colors" style={{ color: "var(--text-base)" }}>
-                            <span>Proven</span>
+                            <span>{t("header.p1")}</span>
                             <br />
-                            <span className="gradient-text-warm">Results</span>
+                            <span className="gradient-text-warm">{t("header.p2")}</span>
                         </h2>
                     </div>
                     <p className="max-w-sm text-sm leading-relaxed md:text-right transition-colors" style={{ color: "var(--text-muted)" }}>
-                        Real projects. Measurable impact. We deliver transformation
-                        that moves the needle for enterprise clients.
+                        {t("header.description")}
                     </p>
                 </motion.div>
 
@@ -229,7 +230,7 @@ export default function CaseStudiesSection() {
                         gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
                     }}
                 >
-                    {CASE_STUDIES.map((study, i) => (
+                    {CASE_STUDIES.map((study: CaseStudy, i: number) => (
                         <CaseStudyCard key={study.id} study={study} index={i} />
                     ))}
                 </div>

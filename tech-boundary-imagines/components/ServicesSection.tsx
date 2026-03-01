@@ -7,8 +7,9 @@
  * hover effects, and scroll-triggered staggered entrance.
  */
 
-import { useRef } from "react";
+import { useRef, ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface Service {
     id: string;
@@ -88,13 +89,12 @@ const SecurityIcon = ({ color }: { color: string }) => (
     </svg>
 );
 
-const SERVICES: Service[] = [
+const getServices = (tItems: (key: string) => string): Service[] => [
     {
         id: "ai-ml",
         number: "01",
-        title: "AI & Machine Learning",
-        description:
-            "Intelligent automation, predictive analytics, and natural language processing solutions that transform raw data into strategic business advantage.",
+        title: tItems("aiml.title"),
+        description: tItems("aiml.description"),
         accent: "rgb(var(--emerald-neon))",
         glow: "rgba(var(--emerald-neon), 0.15)",
         icon: <AIMLIcon color="rgb(var(--emerald-neon))" />,
@@ -102,9 +102,8 @@ const SERVICES: Service[] = [
     {
         id: "cloud",
         number: "02",
-        title: "Cloud Architecture",
-        description:
-            "Multi-cloud, serverless, and Kubernetes orchestration strategies. We design infrastructure that scales infinitely while optimizing cost.",
+        title: tItems("cloud.title"),
+        description: tItems("cloud.description"),
         accent: "rgb(var(--purple-electric))",
         glow: "rgba(var(--purple-electric), 0.15)",
         icon: <CloudIcon color="rgb(var(--purple-electric))" />,
@@ -112,9 +111,8 @@ const SERVICES: Service[] = [
     {
         id: "software",
         number: "03",
-        title: "Custom Software Development",
-        description:
-            "Full-stack engineering with microservices, event-driven architectures, and real-time systems. Built to perform at enterprise scale.",
+        title: tItems("software.title"),
+        description: tItems("software.description"),
         accent: "rgb(var(--blue-neon))",
         glow: "rgba(var(--blue-neon), 0.15)",
         icon: <CodeIcon color="rgb(var(--blue-neon))" />,
@@ -122,9 +120,8 @@ const SERVICES: Service[] = [
     {
         id: "data",
         number: "04",
-        title: "Data Analytics & BI",
-        description:
-            "End-to-end data pipelines, interactive dashboards, and decision intelligence platforms that turn complexity into clarity.",
+        title: tItems("data.title"),
+        description: tItems("data.description"),
         accent: "rgb(var(--emerald-neon))",
         glow: "rgba(var(--emerald-neon), 0.15)",
         icon: <DataIcon color="rgb(var(--emerald-neon))" />,
@@ -132,9 +129,8 @@ const SERVICES: Service[] = [
     {
         id: "strategy",
         number: "05",
-        title: "Digital Strategy Consulting",
-        description:
-            "Technology roadmapping, process optimization, and organizational change management for enterprises navigating digital transformation.",
+        title: tItems("strategy.title"),
+        description: tItems("strategy.description"),
         accent: "rgb(var(--purple-electric))",
         glow: "rgba(var(--purple-electric), 0.15)",
         icon: <StrategyIcon color="rgb(var(--purple-electric))" />,
@@ -142,9 +138,8 @@ const SERVICES: Service[] = [
     {
         id: "security",
         number: "06",
-        title: "Cybersecurity",
-        description:
-            "Zero-trust architecture, threat intelligence, penetration testing, and regulatory compliance. Protecting your digital frontier.",
+        title: tItems("security.title"),
+        description: tItems("security.description"),
         accent: "#0055FF",
         glow: "rgba(0,85,255,0.10)",
         icon: <SecurityIcon color="#0055FF" />,
@@ -262,6 +257,10 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
 /* ── Section ── */
 export default function ServicesSection() {
+    const t = useTranslations("Services");
+    const tItems = useTranslations("Services.items");
+    const SERVICES = getServices(tItems);
+
     const headerRef = useRef<HTMLDivElement>(null);
     const headerInView = useInView(headerRef, { once: true });
 
@@ -291,16 +290,15 @@ export default function ServicesSection() {
                     className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
                     <div className="flex flex-col gap-4">
-                        <span className="section-badge">Our Services</span>
+                        <span className="section-badge">{t("header.badge")}</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight transition-colors" style={{ color: "var(--text-base)" }}>
-                            <span>Digital Transformation</span>
+                            <span>{t("header.p1")}</span>
                             <br />
-                            <span className="gradient-text-emerald">Solutions</span>
+                            <span className="gradient-text-emerald">{t("header.p2")}</span>
                         </h2>
                     </div>
                     <p className="max-w-sm text-sm leading-relaxed md:text-right transition-colors" style={{ color: "var(--text-muted)" }}>
-                        End-to-end technology services that accelerate innovation,
-                        optimize operations, and create measurable business impact.
+                        {t("header.description")}
                     </p>
                 </motion.div>
 
@@ -313,7 +311,7 @@ export default function ServicesSection() {
                         gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
                     }}
                 >
-                    {SERVICES.map((service, i) => (
+                    {SERVICES.map((service: Service, i: number) => (
                         <ServiceCard key={service.id} service={service} index={i} />
                     ))}
                 </div>

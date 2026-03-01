@@ -25,6 +25,7 @@
 
 import { useRef, useState, useCallback, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface Concept {
   id: string;
@@ -36,74 +37,75 @@ interface Concept {
   tag: string;
 }
 
-const CONCEPTS: Concept[] = [
+const getConcepts = (tItems: (key: string) => string): Concept[] => [
   {
     id: "c1",
     number: "001",
-    title: "The Conscious Cloud",
-    teaser: "Distributed AGI instances that share a unified self-awareness across global compute nodes. Consciousness as infrastructure.",
+    title: tItems("c1.title"),
+    teaser: tItems("c1.teaser"),
     accent: "rgb(var(--emerald-neon))",
     glow: "rgba(var(--emerald-neon), 0.2)",
-    tag: "AI × Infrastructure",
+    tag: tItems("c1.tag"),
   },
   {
     id: "c2",
     number: "002",
-    title: "Quantum Memory Fabric",
-    teaser: "Storing petabytes inside individual molecules. Cold-atom arrays that retain data for centuries without power.",
+    title: tItems("c2.title"),
+    teaser: tItems("c2.teaser"),
     accent: "rgb(var(--purple-electric))",
     glow: "rgba(var(--purple-electric), 0.2)",
-    tag: "Quantum × Storage",
+    tag: tItems("c2.tag"),
   },
   {
     id: "c3",
     number: "003",
-    title: "Neural Sovereignty",
-    teaser: "The legal and technical framework for owning your own neural data. End-to-end encrypted thought. Inalienable cognitive rights.",
+    title: tItems("c3.title"),
+    teaser: tItems("c3.teaser"),
     accent: "rgb(var(--blue-neon))",
     glow: "rgba(var(--blue-neon), 0.2)",
-    tag: "Neural × Ethics",
+    tag: tItems("c3.tag"),
   },
   {
     id: "c4",
     number: "004",
-    title: "Morphic Interfaces",
-    teaser: "UIs that reshape themselves in real time based on biometric signals, context, and predictive intent modelling.",
+    title: tItems("c4.title"),
+    teaser: tItems("c4.teaser"),
     accent: "rgb(var(--emerald-neon))",
     glow: "rgba(var(--emerald-neon), 0.15)",
-    tag: "UX × AI",
+    tag: tItems("c4.tag"),
   },
   {
     id: "c5",
     number: "005",
-    title: "Synthetic Ecosystems",
-    teaser: "Procedurally grown digital environments that follow emergent evolutionary rules. Ecosystems that outlive their creators.",
+    title: tItems("c5.title"),
+    teaser: tItems("c5.teaser"),
     accent: "rgb(var(--purple-electric))",
     glow: "rgba(var(--purple-electric), 0.15)",
-    tag: "Bio × Digital",
+    tag: tItems("c5.tag"),
   },
   {
     id: "c6",
     number: "006",
-    title: "Zero-Latency Civilisation",
-    teaser: "Planetary communication networks built on entangled photon pairs. Information that arrives before it is sent.",
+    title: tItems("c6.title"),
+    teaser: tItems("c6.teaser"),
     accent: "rgb(var(--blue-neon))",
     glow: "rgba(var(--blue-neon), 0.15)",
-    tag: "Quantum × Comms",
+    tag: tItems("c6.tag"),
   },
   {
     id: "c7",
     number: "007",
-    title: "The Post-Scarcity Stack",
-    teaser: "Open-source molecular manufacturing protocols. When any device can print any material, scarcity becomes a policy choice.",
+    title: tItems("c7.title"),
+    teaser: tItems("c7.teaser"),
     accent: "rgb(var(--emerald-neon))",
     glow: "rgba(var(--emerald-neon), 0.15)",
-    tag: "Manufacturing × Web3",
+    tag: tItems("c7.tag"),
   },
 ];
 
+
 /* ── Concept Card ── */
-function ConceptCard({ concept, index }: { concept: Concept; index: number }) {
+function ConceptCard({ concept, index, exploreText }: { concept: Concept; index: number; exploreText: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 40 }}
@@ -182,7 +184,7 @@ function ConceptCard({ concept, index }: { concept: Concept; index: number }) {
             style={{ color: concept.accent }}
             data-cursor-hover
           >
-            Explore Concept
+            {exploreText}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -195,6 +197,10 @@ function ConceptCard({ concept, index }: { concept: Concept; index: number }) {
 
 /* ── Main Section ── */
 export default function ImagineCanvas() {
+  const t = useTranslations("ImagineCanvas");
+  const tItems = useTranslations("ImagineCanvas.items");
+  const CONCEPTS = getConcepts(tItems);
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const headerInView = useInView(headerRef, { once: true });
@@ -270,10 +276,10 @@ export default function ImagineCanvas() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="flex flex-col gap-4">
             <span className="section-badge" style={{ color: "#b026ff", borderColor: "rgba(176,38,255,0.3)", background: "rgba(176,38,255,0.06)" }}>
-              Imagine Canvas
+              {t("header.badge")}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold transition-colors" style={{ color: "var(--text-base)" }}>
-              <span>Breakthrough</span>
+              <span>{t("header.p1")}</span>
               <br />
               <span
                 style={{
@@ -283,7 +289,7 @@ export default function ImagineCanvas() {
                   backgroundClip: "text",
                 }}
               >
-                Concepts
+                {t("header.p2")}
               </span>
             </h2>
           </div>
@@ -330,7 +336,7 @@ export default function ImagineCanvas() {
         style={{ cursor: "grab", userSelect: "none" }}
       >
         {CONCEPTS.map((concept, i) => (
-          <ConceptCard key={concept.id} concept={concept} index={i} />
+          <ConceptCard key={concept.id} concept={concept} index={i} exploreText={t("explore")} />
         ))}
 
         {/* End spacer */}

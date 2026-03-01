@@ -34,6 +34,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface Feature {
   id: string;
@@ -178,12 +179,12 @@ const SynthesisIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
-const FEATURES: Feature[] = [
+const getFeatures = (tItems: any): Feature[] => [
   {
     id: "agi",
-    label: "01 — AI",
-    title: "Artificial General Intelligence",
-    description: "Self-evolving neural architectures that reason, create, and adapt beyond human cognitive baselines. AGI isn't a destination — it's the departure point.",
+    label: tItems("agi.label"),
+    title: tItems("agi.title"),
+    description: tItems("agi.description"),
     accentColor: "rgb(var(--emerald-neon))",
     glowColor: "rgba(var(--emerald-neon), 0.15)",
     icon: <AIIcon color="rgb(var(--emerald-neon))" />,
@@ -191,9 +192,9 @@ const FEATURES: Feature[] = [
   },
   {
     id: "quantum",
-    label: "02 — QUANTUM",
-    title: "Quantum Entanglement Computing",
-    description: "Harness superposition and entanglement to solve computations that classical machines would take millennia to resolve.",
+    label: tItems("quantum.label"),
+    title: tItems("quantum.title"),
+    description: tItems("quantum.description"),
     accentColor: "rgb(var(--purple-electric))",
     glowColor: "rgba(var(--purple-electric), 0.15)",
     icon: <QuantumIcon color="rgb(var(--purple-electric))" />,
@@ -201,9 +202,9 @@ const FEATURES: Feature[] = [
   },
   {
     id: "neural",
-    label: "03 — NEURAL",
-    title: "Neural Interface OS",
-    description: "Direct brain-to-machine communication. Thought becomes command. Reality becomes programmable.",
+    label: tItems("neural.label"),
+    title: tItems("neural.title"),
+    description: tItems("neural.description"),
     accentColor: "rgb(var(--blue-neon))",
     glowColor: "rgba(var(--blue-neon), 0.15)",
     icon: <NeuralIcon color="rgb(var(--blue-neon))" />,
@@ -211,9 +212,9 @@ const FEATURES: Feature[] = [
   },
   {
     id: "web3",
-    label: "04 — WEB3",
-    title: "Decentralised Reality",
-    description: "Ownership without intermediaries. Identity without borders. Economy without gatekeepers.",
+    label: tItems("web3.label"),
+    title: tItems("web3.title"),
+    description: tItems("web3.description"),
     accentColor: "rgb(var(--emerald-neon))",
     glowColor: "rgba(var(--emerald-neon), 0.15)",
     icon: <Web3Icon color="rgb(var(--emerald-neon))" />,
@@ -221,9 +222,9 @@ const FEATURES: Feature[] = [
   },
   {
     id: "photonic",
-    label: "05 — PHOTONIC",
-    title: "Photonic Processing",
-    description: "Light-speed data transmission through silicon photonics. Zero latency. Infinite bandwidth.",
+    label: tItems("photonic.label"),
+    title: tItems("photonic.title"),
+    description: tItems("photonic.description"),
     accentColor: "rgb(var(--purple-electric))",
     glowColor: "rgba(var(--purple-electric), 0.15)",
     icon: <PhotonicIcon color="rgb(var(--purple-electric))" />,
@@ -231,9 +232,9 @@ const FEATURES: Feature[] = [
   },
   {
     id: "bio",
-    label: "06 — BIO",
-    title: "Bio-Digital Convergence",
-    description: "The merger of biological and digital substrates. Living processors. Organic memory. Synthetic cognition.",
+    label: tItems("bio.label"),
+    title: tItems("bio.title"),
+    description: tItems("bio.description"),
     accentColor: "rgb(var(--blue-neon))",
     glowColor: "rgba(var(--blue-neon), 0.15)",
     icon: <BioDigitalIcon color="rgb(var(--blue-neon))" />,
@@ -241,9 +242,9 @@ const FEATURES: Feature[] = [
   },
   {
     id: "synthesis",
-    label: "07 — SYNTHESIS",
-    title: "Autonomous Reality Synthesis",
-    description: "AI-generated persistent universes. Procedural physics. Worlds that evolve, adapt, and breathe without human intervention. The ultimate convergence of all preceding technologies into a single coherent experiential layer.",
+    label: tItems("synthesis.label"),
+    title: tItems("synthesis.title"),
+    description: tItems("synthesis.description"),
     accentColor: "#00FF9D",
     glowColor: "rgba(0,255,157,0.15)",
     icon: <SynthesisIcon color="#00FF9D" />,
@@ -358,6 +359,10 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
 /* ── Section Component ── */
 export default function FeaturesSection() {
+  const t = useTranslations("Features");
+  const tItems = useTranslations("Features.items");
+  const FEATURES = getFeatures(tItems);
+
   const headerRef = useRef<HTMLDivElement>(null);
   const headerInView = useInView(headerRef, { once: true });
 
@@ -387,21 +392,21 @@ export default function FeaturesSection() {
           className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
           <div className="flex flex-col gap-4">
-            <span className="section-badge">Our Capabilities</span>
+            <span className="section-badge">{t("header.badge")}</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight transition-colors" style={{ color: "var(--text-base)" }}>
-              <span>Technology</span>
+              <span>{t("header.p1")}</span>
               <br />
-              <span className="gradient-text-emerald">Stack</span>
+              <span className="gradient-text-emerald">{t("header.p2")}</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed md:text-right transition-colors" style={{ color: "var(--text-muted)" }}>
-            Seven paradigm-shifting technologies we master to deliver transformative solutions across industries and verticals.
+            {t("header.description")}
           </p>
         </motion.div>
 
         {/* ── Asymmetric Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {FEATURES.map((feature, i) => (
+          {FEATURES.map((feature: any, i: any) => (
             <FeatureCard key={feature.id} feature={feature} index={i} />
           ))}
         </div>

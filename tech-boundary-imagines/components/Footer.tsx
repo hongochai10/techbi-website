@@ -20,6 +20,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { useTranslations } from "next-intl";
 
 const FOOTER_LINKS = [
   {
@@ -71,6 +72,7 @@ const SOCIAL_LINKS = [
 ];
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true });
 
@@ -101,19 +103,19 @@ export default function Footer() {
             <Logo />
 
             <p className="text-sm leading-relaxed transition-colors" style={{ color: "var(--text-muted)" }}>
-              A leading digital transformation company architecting the future of enterprise technology. From strategy to deployment — we build what moves businesses forward.
+              {t("description")}
             </p>
 
             {/* Newsletter */}
             <div className="flex flex-col gap-2">
               <label className="text-[11px] tracking-widest uppercase font-mono transition-colors opacity-60" style={{ color: "var(--text-base)" }} htmlFor="newsletter-email">
-                Join the Frontier
+                {t("newsletterLabel")}
               </label>
               <div className="flex gap-2">
                 <input
                   id="newsletter-email"
                   type="email"
-                  placeholder="you@thefuture.com"
+                  placeholder={t("newsletterPlaceholder")}
                   className="flex-1 bg-glass border border-glass-border rounded px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-neon/50 transition-colors duration-300"
                   style={{ backdropFilter: "blur(10px)", color: "var(--text-base)" }}
                 />
@@ -176,7 +178,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs font-mono transition-colors opacity-40" style={{ color: "var(--text-base)" }}>
-            © 2025 Tech Boundary Imagination. All rights reserved.
+            {t("copyright")}
           </p>
           <div className="flex items-center gap-6">
             {["Privacy Policy", "Terms of Use", "Contact"].map((item) => (

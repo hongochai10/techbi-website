@@ -9,8 +9,10 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function CTASection() {
+    const t = useTranslations("CTA");
     const ref = useRef<HTMLDivElement>(null);
     const inView = useInView(ref, { once: true });
 
@@ -60,7 +62,7 @@ export default function CTASection() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                 >
                     <span className="section-badge inline-flex mb-8">
-                        Start Building
+                        {t("badge")}
                     </span>
                 </motion.div>
 
@@ -72,7 +74,7 @@ export default function CTASection() {
                     className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 transition-colors"
                     style={{ color: "var(--text-base)" }}
                 >
-                    <span>Ready to </span>
+                    <span>{t("p1")} </span>
                     <span
                         style={{
                             background: "linear-gradient(135deg, #00FF9D 0%, #b026ff 50%, #0055FF 100%)",
@@ -81,10 +83,10 @@ export default function CTASection() {
                             backgroundClip: "text",
                         }}
                     >
-                        Transform
+                        {t("p2")}
                     </span>
                     <br />
-                    <span>Your Business?</span>
+                    <span> {t("p3")}</span>
                 </motion.h2>
 
                 {/* Sub-heading */}
@@ -95,8 +97,7 @@ export default function CTASection() {
                     className="text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed transition-colors"
                     style={{ color: "var(--text-muted)" }}
                 >
-                    Let&apos;s architect something extraordinary together. From strategy
-                    to deployment, we&apos;re your end-to-end technology partner.
+                    {t("description")}
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -112,7 +113,7 @@ export default function CTASection() {
                                 <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
                                 <path d="M2 6l6 3.5L14 6" stroke="currentColor" strokeWidth="1.2" />
                             </svg>
-                            Schedule a Consultation
+                            {t("button1")}
                         </span>
                     </button>
                     <button className="btn-cyber-secondary" data-cursor-hover>
@@ -126,7 +127,7 @@ export default function CTASection() {
                                     strokeLinejoin="round"
                                 />
                             </svg>
-                            View Our Portfolio
+                            {t("button2")}
                         </span>
                     </button>
                 </motion.div>
@@ -140,9 +141,9 @@ export default function CTASection() {
                     style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "2rem" }}
                 >
                     {[
-                        { value: "150+", label: "Projects Delivered" },
-                        { value: "50+", label: "Enterprise Clients" },
-                        { value: "99.9%", label: "Uptime SLA" },
+                        { value: t("stats.s1.value"), label: t("stats.s1.label") },
+                        { value: t("stats.s2.value"), label: t("stats.s2.label") },
+                        { value: t("stats.s3.value"), label: t("stats.s3.label") },
                     ].map((stat) => (
                         <div key={stat.label} className="flex flex-col items-center gap-1">
                             <span className="text-xl font-bold font-mono gradient-text-emerald">

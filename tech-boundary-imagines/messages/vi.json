@@ -1,0 +1,240 @@
+{
+    "Header": {
+        "nav": {
+            "services": "Dịch Vụ",
+            "caseStudies": "Dự Án",
+            "capabilities": "Năng Lực",
+            "contact": "Liên Hệ"
+        },
+        "cta": "Bắt Đầu Ngay"
+    },
+    "Hero": {
+        "badge": "Est. 2025 — Đơn Vị Dẫn Đầu Chuyển Đổi Số",
+        "tagline": {
+            "p1": "Vượt Trội",
+            "p2": "Giới Hạn.",
+            "p3": "Vượt Xa",
+            "p4": "Tưởng Tượng."
+        },
+        "description": "Chúng tôi kiến trúc chuyển đổi số ở quy mô doanh nghiệp — <ai> AI & ML</ai>, <cloud>Điện toán đám mây</cloud>, <software>Phần mềm tùy chỉnh</software>, và <data>Phân tích dữ liệu</data>. Từ chiến lược đến thực thi, biến tầm nhìn thành kết quả rõ định lượng.",
+        "ctaPrimary": "Bắt Đầu Chuyển Đổi Số",
+        "ctaSecondary": "Xem Dự Án Của Chúng Tôi",
+        "stats": {
+            "projects": "Dự Án Thành Công",
+            "clients": "Khách Hàng Doanh Nghiệp",
+            "satisfaction": "Sự Hài Lòng"
+        },
+        "scroll": "Cuộn Xuống"
+    },
+    "TrustBar": {
+        "label": "Được tin tưởng bởi các công ty đổi mới toàn cầu"
+    },
+    "Features": {
+        "header": {
+            "badge": "Năng Lực Cốt Lõi",
+            "p1": "Công Nghệ",
+            "p2": "Đỉnh Cao",
+            "description": "Bảy công nghệ tạo nên bước ngoặt mà chúng tôi làm chủ để mang lại các giải pháp chuyển đổi xuyên suốt mọi ngành nghề."
+        },
+        "items": {
+            "agi": {
+                "label": "01 — TRÍ TUỆ NHÂN TẠO",
+                "title": "Trí Tuệ Nhân Tạo Tổng Thể",
+                "description": "Các kiến trúc thần kinh tự tiến hóa với khả năng suy luận, sáng tạo và thích ứng vượt ra ngoài nhận thức con người."
+            },
+            "quantum": {
+                "label": "02 — LƯỢNG TỬ",
+                "title": "Điện Toán Lượng Tử",
+                "description": "Sử dụng sự chồng chập lượng tử để giải quyết các tính toán mà máy tính cổ điển phải mất hàng thiên niên kỷ mới xong."
+            },
+            "neural": {
+                "label": "03 — THẦN KINH",
+                "title": "Hệ Điều Hành Giao Diện Thần Kinh",
+                "description": "Giao tiếp trực tiếp giữa não bộ và máy móc. Suy nghĩ trở thành mệnh lệnh. Thực tại có thể được lập trình."
+            },
+            "web3": {
+                "label": "04 — WEB3",
+                "title": "Thực Tại Phi Tập Trung",
+                "description": "Sở hữu không qua trung gian. Danh tính không biên giới. Nền kinh tế không rào cản."
+            },
+            "photonic": {
+                "label": "05 — QUANG TỬ",
+                "title": "Bộ Xử Lý Quang Tử",
+                "description": "Truyền dẫn dữ liệu với tốc độ ánh sáng qua quang tử silicon. Độ trễ bằng không. Băng thông vô hạn."
+            },
+            "bio": {
+                "label": "06 — SINH HỌC",
+                "title": "Hội Tụ Sinh - Số",
+                "description": "Sự kết hợp giữa sinh học và kỹ thuật số. Bộ vi xử lý sống. Bộ nhớ hữu cơ."
+            },
+            "synthesis": {
+                "label": "07 — TỔNG HỢP",
+                "title": "Tổng Hợp Thực Tại Tự Trị",
+                "description": "Các vũ trụ số tiến hóa, thích ứng và vận hành tự động. Hội tụ tối thượng của tất cả các công nghệ trước đó."
+            }
+        }
+    },
+    "Services": {
+        "header": {
+            "badge": "Dịch Vụ",
+            "p1": "Giải Pháp",
+            "p2": "Chuyển Đổi Số",
+            "description": "Các dịch vụ công nghệ toàn diện giúp tăng tốc đổi mới, tối ưu hóa các quy trình vận hành và tạo ra tác động."
+        },
+        "items": {
+            "aiml": {
+                "title": "AI & Máy Học",
+                "description": "Tự động hóa thông minh, phân tích dự đoán và xử lý ngôn ngữ tự nhiên để biến dữ liệu thô thành lợi thế chiến lược."
+            },
+            "cloud": {
+                "title": "Kiến Trúc Đám Mây",
+                "description": "Đa đám mây và Kubernetes. Chúng tôi thiết kế hạ tầng có khả năng mở rộng vô hạn trong khi tối ưu chi phí."
+            },
+            "software": {
+                "title": "Phần Mềm Tùy Chỉnh",
+                "description": "Kỹ thuật toàn ngăn xếp với kiến trúc vi dịch vụ và thời gian thực. Được xây dựng để hoạt động ở quy mô."
+            },
+            "data": {
+                "title": "Phân Tích Dữ Liệu & BI",
+                "description": "Đường ống dẫn dữ liệu từ đầu đến cuối, báo cáo tương tác và các nền tảng thông minh biến đổi dữ liệu thành thông tin."
+            },
+            "strategy": {
+                "title": "Tư Vấn Chiến Lược",
+                "description": "Lộ trình công nghệ, tối ưu hóa quy trình và quản lý thay đổi dành cho các doanh nghiệp đang dịch chuyển số."
+            },
+            "security": {
+                "title": "An Ninh Mạng",
+                "description": "Kiến trúc zero-trust, phát hiện mối đe dọa tự động và các quy tắc tuân thủ toàn diện được tích hợp vào mọi tầng."
+            }
+        }
+    },
+    "CaseStudies": {
+        "header": {
+            "badge": "Dự Án Điển Hình",
+            "p1": "Kinh Nghiệm",
+            "p2": "Thực Tế",
+            "description": "Dự án thực. Tác động có thể đo lường được. Chúng tôi chuyển giao những giải pháp kỹ thuật số đổi mới doanh nghiệp."
+        },
+        "items": {
+            "fintech": {
+                "industry": "FinTech",
+                "title": "Nền Tảng Thanh Toán Hệ Mới",
+                "description": "Kiến trúc cổng thanh toán quy mô siêu lớn với độ trễ tối thiểu, chuyển đổi từ hệ thống cũ sang vi dịch vụ mạnh mẽ.",
+                "metricLabel": "Tốc Độ Xử Lý Tăng Lên"
+            },
+            "healthcare": {
+                "industry": "Y tế thông minh",
+                "title": "Chẩn Đoán Dựa Trên AI",
+                "description": "Xây dựng nền tảng học sâu phân tích hình ảnh y học với độ chính xác và tốc độ chưa từng có trên toàn quốc.",
+                "metricLabel": "Giảm Thiểu Thời Gian"
+            },
+            "ecommerce": {
+                "industry": "Thương Mại",
+                "title": "Chuyển Đổi Hệ Thống Bán Lẻ",
+                "description": "Chuyển đổi kỹ thuật số toàn diện dành cho thương mại quy mô lớn với quản lý thời gian thực và tự động hóa.",
+                "metricLabel": "Doanh Thu Vượt Trội"
+            }
+        }
+    },
+    "Testimonials": {
+        "header": {
+            "badge": "Phản Hồi",
+            "p1": "Khách Hàng",
+            "p2": "Lên Tiếng"
+        },
+        "items": {
+            "t1": {
+                "quote": "TechBI không chỉ cung cấp một sản phẩm — họ đã kiến tạo nên lợi thế cạnh tranh. Nền tảng của chúng tôi hiện xử lý khối lượng dữ liệu cao gấp 10 lần với chỉ một nửa chi phí. Chiều sâu kỹ thuật và tư duy chiến lược của họ thực sự mang tầm đẳng cấp thế giới.",
+                "author": "Sarah Chen",
+                "role": "CTO",
+                "company": "NovaPay Financial"
+            },
+            "t2": {
+                "quote": "Làm việc cùng TechBI giống như được bổ sung cả một đội ngũ kỹ sư cấp cao chỉ sau một đêm. Nền tảng chẩn đoán AI do họ xây dựng đã rút ngắn chu kỳ báo cáo của chúng tôi từ nhiều tuần xuống chỉ còn vài giờ, và họ xử lý rất tinh tế các quy định bảo mật y tế ngay từ ngày đầu tiên.",
+                "author": "Tiến sĩ Marcus Rivera",
+                "role": "Phó Chủ tịch Đổi mới Sáng tạo",
+                "company": "Hệ thống Y tế MedCore"
+            },
+            "t3": {
+                "quote": "Từ lúc lên chiến lược cho đến khi thực thi, TechBI thực sự là một nền tảng chất lượng và chuẩn mực. Họ đã giúp chúng tôi chuyển đổi toàn bộ hệ thống cơ sở hạ tầng kỹ thuật số — từ việc chuyển dịch lên điện toán đám mây cho đến phân tích thời gian thực. Tất cả được giao trước thời hạn.",
+                "author": "James Whitfield",
+                "role": "CEO",
+                "company": "Tập đoàn Vertex Commerce"
+            }
+        }
+    },
+    "CTA": {
+        "badge": "Bắt Đầu Ngay",
+        "p1": "Sẵn Sàng",
+        "p2": "Chuyển Đổi",
+        "p3": "Doanh Nghiệp Của Bạn?",
+        "description": "Hãy cùng nhau kiến trúc nền công nghệ phi thường. Từ khâu lên chiến lược cho đến lúc phát hành và sử dụng hệ thống bảo mật, chúng tôi là đối tác công nghệ toàn diện và sẽ mang lại giá trị trọn đời cho bạn.",
+        "button1": "Lên Lịch Tư Vấn",
+        "button2": "Xem Hồ Sơ Năng Lực",
+        "stats": {
+            "s1": {
+                "value": "150+",
+                "label": "Dự Án Hoàn Thành"
+            },
+            "s2": {
+                "value": "50+",
+                "label": "Khách Hàng Doanh Nghiệp"
+            },
+            "s3": {
+                "value": "99.9%",
+                "label": "Cam Kết Uptime"
+            }
+        }
+    },
+    "Footer": {
+        "description": "TechBI tự hào là công ty chuyển đổi kỹ thuật số hàng đầu sẵn sàng đồng hành cùng doanh nghiệp bạn chinh phục kỷ nguyên 4.0 và kỷ nguyên số. Kiến tạo giải pháp công nghệ vươn tầm thế giới.",
+        "newsletterLabel": "Tham Gia Sớm Kỷ Nguyên Công Nghệ",
+        "newsletterPlaceholder": "you@thefuture.com",
+        "copyright": "© 2025 Tech Boundary Imagination. All rights reserved."
+    },
+    "ImagineCanvas": {
+        "header": {
+            "badge": "Ý Tưởng Tương Lai",
+            "p1": "Ý Tưởng",
+            "p2": "Đột Phá"
+        },
+        "items": {
+            "c1": {
+                "title": "Đám Mây Tri Thức",
+                "teaser": "Các bản thể AGI phân tán chia sẻ nhận thức chung trên toàn bộ các nút mạng tính toán toàn cầu. Đưa nhận thức trở thành cơ sở hạ tầng nền móng.",
+                "tag": "AI × Hạ Tầng"
+            },
+            "c2": {
+                "title": "Cấu Trúc Lưu Trữ Lượng Tử",
+                "teaser": "Lưu trữ hàng petabyte bên trong từng phân tử hóa học. Các mảng lượng tử nguyên tử lạnh duy trì dữ liệu hàng trăm thế kỷ không cần dùng điện năng.",
+                "tag": "Lượng tử × Lưu Trữ"
+            },
+            "c3": {
+                "title": "Quyền Tự Quyết Tư Duy",
+                "teaser": "Khuôn khổ pháp lý và kỹ thuật bảo vệ quyền sở hữu dữ liệu nền tảng nhận thức thần kinh của bạn. Mã hóa suy nghĩ 2 chiều tuyệt đối.",
+                "tag": "Thần kinh × Đạo đức"
+            },
+            "c4": {
+                "title": "Giao Diện Định Hình Tự Động",
+                "teaser": "Giao diện phần mềm tự thiết lập trong thời gian thực, dựa trên sinh trắc học và hoàn cảnh, ý định của con người một cách hoàn toàn tự động.",
+                "tag": "UX × AI"
+            },
+            "c5": {
+                "title": "Hệ Sinh Thái Nhân Tạo",
+                "teaser": "Môi trường kỹ thuật số phát triển tự động tuân theo các quy tắc tiến hóa tự nhiên mô phỏng. Những môi trường này sẽ sống lâu hơn phiên bản gốc tạo ra nó.",
+                "tag": "Sinh học × Digital"
+            },
+            "c6": {
+                "title": "Nền Văn Minh Độ Trễ Bằng 0",
+                "teaser": "Mạng liên lạc hành tinh xây dựng dựa trên các cặp hạt vi phân lượng tử. Thông tin đến tay trước khi nó thực sự được gửi đi theo thuyết tương đối của không thời gian.",
+                "tag": "Lượng tử × Viễn Thông"
+            },
+            "c7": {
+                "title": "Cấu Trúc Tái Tạo Hậu Khan Hiếm",
+                "teaser": "Các quy tắc giao thức sản xuất phân tử mã nguồn mở. Bất kỳ máy móc nào cũng có thể chế tạo bất cứ thứ gì, việc khan hiếm chỉ là một chính sách lỗi thời.",
+                "tag": "Chế tạo × Web3"
+            }
+        },
+        "explore": "Khám Phá Ngay"
+    }
+}
