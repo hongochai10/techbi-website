@@ -19,6 +19,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import { Logo } from "./Logo";
 
 const FOOTER_LINKS = [
   {
@@ -97,22 +98,7 @@ export default function Footer() {
             className="flex flex-col gap-6 max-w-sm"
           >
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="relative w-9 h-9 flex-shrink-0">
-                <div className="absolute inset-0 rounded-sm border border-emerald-neon/40 animate-rotate-slow" />
-                <div className="absolute inset-[3px] rounded-sm border border-purple-electric/35 animate-counter-rotate" />
-                <div className="absolute inset-[7px] bg-emerald-neon/80 rounded-sm shadow-neon-emerald" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-[10px] font-mono text-emerald-neon/60 tracking-[0.24em] uppercase">Tech Boundary</span>
-                <span
-                  className="text-base font-bold tracking-tight transition-colors"
-                  style={{ color: "var(--text-base)" }}
-                >
-                  Imagination
-                </span>
-              </div>
-            </div>
+            <Logo />
 
             <p className="text-sm leading-relaxed transition-colors" style={{ color: "var(--text-muted)" }}>
               A leading digital transformation company architecting the future of enterprise technology. From strategy to deployment — we build what moves businesses forward.

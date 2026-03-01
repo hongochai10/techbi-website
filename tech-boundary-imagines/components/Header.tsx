@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+import { Logo } from "./Logo";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -67,33 +68,8 @@ export default function Header() {
         {/* ── LOGO ── */}
         <motion.div style={{ y: logoY }}>
           <Link href="/" className="flex items-center gap-3 group" aria-label="Tech Boundary Imagines Home">
-            {/* Abstract logo mark */}
-            <div className="relative w-8 h-8 flex-shrink-0">
-              <motion.div
-                className="absolute inset-0 rounded-sm border border-emerald-neon/50 group-hover:border-emerald-neon transition-colors duration-300"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute inset-[3px] rounded-sm border border-purple-electric/40 group-hover:border-purple-electric/70 transition-colors duration-300"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              />
-              <div className="absolute inset-[7px] bg-emerald-neon/80 rounded-sm group-hover:bg-emerald-neon transition-colors duration-300 shadow-neon-emerald" />
-            </div>
-
-            {/* Wordmark */}
-            <div className="flex flex-col leading-none">
-              <span className="text-[11px] font-mono text-emerald-neon/60 tracking-[0.22em] uppercase group-hover:text-emerald-neon/90 transition-colors duration-300">
-                Tech Boundary
-              </span>
-              <span
-                className="text-[15px] font-bold tracking-tight group-hover:gradient-text-emerald transition-all duration-300"
-                style={{ color: "var(--text-base)" }}
-              >
-                Imagination
-              </span>
-            </div>
+            {/* Abstract SVG Logo */}
+            <Logo className="group-hover:scale-105 transition-transform duration-300" />
           </Link>
         </motion.div>
 
