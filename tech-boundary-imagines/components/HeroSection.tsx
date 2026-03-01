@@ -74,7 +74,7 @@ function Counter({ end, suffix = "", label }: { end: number; suffix?: string; la
         {count}
         {suffix}
       </span>
-      <span className="text-xs text-white/40 tracking-widest uppercase font-medium">{label}</span>
+      <span className="text-xs transition-opacity duration-300 tracking-widest uppercase font-medium opacity-50" style={{ color: "var(--text-base)" }}>{label}</span>
     </div>
   );
 }

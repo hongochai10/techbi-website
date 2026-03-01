@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
                             data-cursor-hover
                             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === active
                                 ? "scale-125"
-                                : "bg-white/20 hover:bg-white/40"
+                                : "bg-glass border border-glass-border hover:border-emerald-neon/40"
                                 }`}
                             style={
                                 i === active

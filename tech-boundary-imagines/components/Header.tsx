@@ -107,7 +107,8 @@ export default function Header() {
             >
               <Link
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium text-white/60 hover:text-white/95 transition-colors duration-300 group"
+                className="relative px-4 py-2 text-sm font-medium transition-opacity duration-300 group opacity-60 hover:opacity-100"
+                style={{ color: "var(--text-base)" }}
               >
                 {link.label}
                 {/* Animated underline */}
@@ -166,7 +167,8 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="py-3 text-sm font-medium text-white/70 hover:text-emerald-neon transition-colors duration-300 border-b border-glass-border last:border-b-0"
+              className="py-3 text-sm font-medium transition-colors duration-300 border-b border-glass-border last:border-b-0 hover:text-emerald-neon opacity-80"
+              style={{ color: "var(--text-base)" }}
             >
               {link.label}
             </Link>
