@@ -30,8 +30,8 @@ const CASE_STUDIES: CaseStudy[] = [
             "Architected a microservices-based payment gateway handling 50M+ daily transactions with sub-100ms latency. Migrated from monolith to event-driven architecture on Kubernetes.",
         metric: "300%",
         metricLabel: "Processing Speed Increase",
-        accent: "#00FF9D",
-        glow: "rgba(0,255,157,0.15)",
+        accent: "rgb(var(--emerald-neon))",
+        glow: "rgba(var(--emerald-neon), 0.15)",
     },
     {
         id: "healthcare",
@@ -41,8 +41,8 @@ const CASE_STUDIES: CaseStudy[] = [
             "Built a deep learning diagnostic platform that analyzes medical imaging with 97.3% accuracy. Integrated with hospital EHR systems across 200+ facilities nationwide.",
         metric: "85%",
         metricLabel: "Reduction in Diagnostic Time",
-        accent: "#b026ff",
-        glow: "rgba(176,38,255,0.15)",
+        accent: "rgb(var(--purple-electric))",
+        glow: "rgba(var(--purple-electric), 0.15)",
     },
     {
         id: "ecommerce",
@@ -52,8 +52,8 @@ const CASE_STUDIES: CaseStudy[] = [
             "End-to-end digital transformation of a Fortune 500 retail platform. Real-time inventory, AI recommendations, and omnichannel orchestration serving 12M monthly active users.",
         metric: "$2.4M",
         metricLabel: "Additional Revenue in 6 Months",
-        accent: "#0055FF",
-        glow: "rgba(0,85,255,0.15)",
+        accent: "rgb(var(--blue-neon))",
+        glow: "rgba(var(--blue-neon), 0.15)",
     },
 ];
 
@@ -182,7 +182,7 @@ export default function CaseStudiesSection() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     background:
-                        "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(0,255,157,0.04) 0%, transparent 70%)",
+                        "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(var(--emerald-neon), 0.15) 0%, transparent 70%)",
                 }}
                 aria-hidden="true"
             />

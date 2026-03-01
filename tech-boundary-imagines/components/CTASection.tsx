@@ -35,7 +35,7 @@ export default function CTASection() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     background:
-                        "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0,255,157,0.08) 0%, rgba(176,38,255,0.05) 40%, transparent 70%)",
+                        "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(var(--emerald-neon), 0.15) 0%, rgba(var(--purple-electric), 0.10) 40%, transparent 70%)",
                 }}
                 aria-hidden="true"
             />
@@ -160,14 +160,14 @@ export default function CTASection() {
             <div
                 className="absolute top-0 left-0 w-96 h-96 pointer-events-none"
                 style={{
-                    background: "radial-gradient(circle at top left, rgba(0,255,157,0.04), transparent 60%)",
+                    background: "radial-gradient(circle at top left, rgba(var(--emerald-neon), 0.10), transparent 60%)",
                 }}
                 aria-hidden="true"
             />
             <div
                 className="absolute bottom-0 right-0 w-96 h-96 pointer-events-none"
                 style={{
-                    background: "radial-gradient(circle at bottom right, rgba(176,38,255,0.04), transparent 60%)",
+                    background: "radial-gradient(circle at bottom right, rgba(var(--purple-electric), 0.10), transparent 60%)",
                 }}
                 aria-hidden="true"
             />

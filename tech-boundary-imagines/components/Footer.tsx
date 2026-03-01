@@ -198,14 +198,14 @@ export default function Footer() {
       <div
         className="absolute bottom-0 left-0 w-64 h-64 pointer-events-none"
         style={{
-          background: "radial-gradient(circle at bottom left, rgba(0,255,157,0.04), transparent 70%)",
+          background: "radial-gradient(circle at bottom left, rgba(var(--emerald-neon), 0.15), transparent 70%)",
         }}
         aria-hidden="true"
       />
       <div
         className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none"
         style={{
-          background: "radial-gradient(circle at bottom right, rgba(176,38,255,0.05), transparent 70%)",
+          background: "radial-gradient(circle at bottom right, rgba(var(--purple-electric), 0.15), transparent 70%)",
         }}
         aria-hidden="true"
       />

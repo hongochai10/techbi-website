@@ -9,12 +9,12 @@
 :root {
   --void: #ffffff;
   --midnight: #f8fafc;
-  --cyan-neon: #009cb3;
-  --emerald-neon: 0, 136, 85;
-  --blue-neon: #0044cc;
-  --blue-deep: #002299;
-  --purple-electric: 138, 31, 204;
-  --orange-neon: #cc5500;
+  --cyan-neon: #007385;
+  --emerald-neon: 0, 106, 66;
+  --blue-neon: #003399;
+  --blue-deep: #001166;
+  --purple-electric: 102, 20, 153;
+  --orange-neon: #a84600;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.08);
   --font-space-grotesk: 'Space Grotesk', sans-serif;

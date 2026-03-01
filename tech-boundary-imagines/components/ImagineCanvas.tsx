@@ -42,8 +42,8 @@ const CONCEPTS: Concept[] = [
     number: "001",
     title: "The Conscious Cloud",
     teaser: "Distributed AGI instances that share a unified self-awareness across global compute nodes. Consciousness as infrastructure.",
-    accent: "#00FF9D",
-    glow: "rgba(0,255,157,0.2)",
+    accent: "rgb(var(--emerald-neon))",
+    glow: "rgba(var(--emerald-neon), 0.2)",
     tag: "AI × Infrastructure",
   },
   {
@@ -51,8 +51,8 @@ const CONCEPTS: Concept[] = [
     number: "002",
     title: "Quantum Memory Fabric",
     teaser: "Storing petabytes inside individual molecules. Cold-atom arrays that retain data for centuries without power.",
-    accent: "#b026ff",
-    glow: "rgba(176,38,255,0.2)",
+    accent: "rgb(var(--purple-electric))",
+    glow: "rgba(var(--purple-electric), 0.2)",
     tag: "Quantum × Storage",
   },
   {
@@ -60,8 +60,8 @@ const CONCEPTS: Concept[] = [
     number: "003",
     title: "Neural Sovereignty",
     teaser: "The legal and technical framework for owning your own neural data. End-to-end encrypted thought. Inalienable cognitive rights.",
-    accent: "#0055FF",
-    glow: "rgba(0,85,255,0.2)",
+    accent: "rgb(var(--blue-neon))",
+    glow: "rgba(var(--blue-neon), 0.2)",
     tag: "Neural × Ethics",
   },
   {
@@ -69,8 +69,8 @@ const CONCEPTS: Concept[] = [
     number: "004",
     title: "Morphic Interfaces",
     teaser: "UIs that reshape themselves in real time based on biometric signals, context, and predictive intent modelling.",
-    accent: "#00FF9D",
-    glow: "rgba(0,255,157,0.15)",
+    accent: "rgb(var(--emerald-neon))",
+    glow: "rgba(var(--emerald-neon), 0.15)",
     tag: "UX × AI",
   },
   {
@@ -78,8 +78,8 @@ const CONCEPTS: Concept[] = [
     number: "005",
     title: "Synthetic Ecosystems",
     teaser: "Procedurally grown digital environments that follow emergent evolutionary rules. Ecosystems that outlive their creators.",
-    accent: "#b026ff",
-    glow: "rgba(176,38,255,0.15)",
+    accent: "rgb(var(--purple-electric))",
+    glow: "rgba(var(--purple-electric), 0.15)",
     tag: "Bio × Digital",
   },
   {
@@ -87,8 +87,8 @@ const CONCEPTS: Concept[] = [
     number: "006",
     title: "Zero-Latency Civilisation",
     teaser: "Planetary communication networks built on entangled photon pairs. Information that arrives before it is sent.",
-    accent: "#0055FF",
-    glow: "rgba(0,85,255,0.15)",
+    accent: "rgb(var(--blue-neon))",
+    glow: "rgba(var(--blue-neon), 0.15)",
     tag: "Quantum × Comms",
   },
   {
@@ -96,8 +96,8 @@ const CONCEPTS: Concept[] = [
     number: "007",
     title: "The Post-Scarcity Stack",
     teaser: "Open-source molecular manufacturing protocols. When any device can print any material, scarcity becomes a policy choice.",
-    accent: "#00FF9D",
-    glow: "rgba(0,255,157,0.15)",
+    accent: "rgb(var(--emerald-neon))",
+    glow: "rgba(var(--emerald-neon), 0.15)",
     tag: "Manufacturing × Web3",
   },
 ];
@@ -253,7 +253,7 @@ export default function ImagineCanvas() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 60% 40% at 50% 80%, rgba(176,38,255,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 40% at 50% 80%, rgba(var(--purple-electric), 0.15) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />

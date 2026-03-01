@@ -27,7 +27,7 @@ const TESTIMONIALS: Testimonial[] = [
         author: "Sarah Chen",
         role: "CTO",
         company: "NovaPay Financial",
-        accent: "#00FF9D",
+        accent: "rgb(var(--emerald-neon))",
     },
     {
         id: "t2",
@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [
         author: "Dr. Marcus Rivera",
         role: "VP of Innovation",
         company: "MedCore Health Systems",
-        accent: "#b026ff",
+        accent: "rgb(var(--purple-electric))",
     },
     {
         id: "t3",
@@ -45,7 +45,7 @@ const TESTIMONIALS: Testimonial[] = [
         author: "James Whitfield",
         role: "CEO",
         company: "Vertex Commerce Group",
-        accent: "#0055FF",
+        accent: "rgb(var(--blue-neon))",
     },
 ];
 
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     background:
-                        "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(176,38,255,0.05) 0%, transparent 70%)",
+                        "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(var(--purple-electric), 0.15) 0%, transparent 70%)",
                 }}
                 aria-hidden="true"
             />
@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
                             <div
                                 className="absolute inset-0 pointer-events-none opacity-30"
                                 style={{
-                                    background: `radial-gradient(ellipse 40% 50% at 0% 50%, ${t.accent}20 0%, transparent 70%)`,
+                                    background: `radial-gradient(ellipse 40% 50% at 0% 50%, rgba(var(${t.id === 't1' ? '--emerald-neon' : t.id === 't2' ? '--purple-electric' : '--blue-neon'}), 0.15) 0%, transparent 70%)`,
                                 }}
                             />
 

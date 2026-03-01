@@ -95,9 +95,9 @@ const SERVICES: Service[] = [
         title: "AI & Machine Learning",
         description:
             "Intelligent automation, predictive analytics, and natural language processing solutions that transform raw data into strategic business advantage.",
-        accent: "#00FF9D",
-        glow: "rgba(0,255,157,0.12)",
-        icon: <AIMLIcon color="#00FF9D" />,
+        accent: "rgb(var(--emerald-neon))",
+        glow: "rgba(var(--emerald-neon), 0.15)",
+        icon: <AIMLIcon color="rgb(var(--emerald-neon))" />,
     },
     {
         id: "cloud",
@@ -105,9 +105,9 @@ const SERVICES: Service[] = [
         title: "Cloud Architecture",
         description:
             "Multi-cloud, serverless, and Kubernetes orchestration strategies. We design infrastructure that scales infinitely while optimizing cost.",
-        accent: "#b026ff",
-        glow: "rgba(176,38,255,0.12)",
-        icon: <CloudIcon color="#b026ff" />,
+        accent: "rgb(var(--purple-electric))",
+        glow: "rgba(var(--purple-electric), 0.15)",
+        icon: <CloudIcon color="rgb(var(--purple-electric))" />,
     },
     {
         id: "software",
@@ -115,9 +115,9 @@ const SERVICES: Service[] = [
         title: "Custom Software Development",
         description:
             "Full-stack engineering with microservices, event-driven architectures, and real-time systems. Built to perform at enterprise scale.",
-        accent: "#0055FF",
-        glow: "rgba(0,85,255,0.12)",
-        icon: <CodeIcon color="#0055FF" />,
+        accent: "rgb(var(--blue-neon))",
+        glow: "rgba(var(--blue-neon), 0.15)",
+        icon: <CodeIcon color="rgb(var(--blue-neon))" />,
     },
     {
         id: "data",
@@ -125,9 +125,9 @@ const SERVICES: Service[] = [
         title: "Data Analytics & BI",
         description:
             "End-to-end data pipelines, interactive dashboards, and decision intelligence platforms that turn complexity into clarity.",
-        accent: "#00FF9D",
-        glow: "rgba(0,255,157,0.10)",
-        icon: <DataIcon color="#00FF9D" />,
+        accent: "rgb(var(--emerald-neon))",
+        glow: "rgba(var(--emerald-neon), 0.15)",
+        icon: <DataIcon color="rgb(var(--emerald-neon))" />,
     },
     {
         id: "strategy",
@@ -135,9 +135,9 @@ const SERVICES: Service[] = [
         title: "Digital Strategy Consulting",
         description:
             "Technology roadmapping, process optimization, and organizational change management for enterprises navigating digital transformation.",
-        accent: "#b026ff",
-        glow: "rgba(176,38,255,0.10)",
-        icon: <StrategyIcon color="#b026ff" />,
+        accent: "rgb(var(--purple-electric))",
+        glow: "rgba(var(--purple-electric), 0.15)",
+        icon: <StrategyIcon color="rgb(var(--purple-electric))" />,
     },
     {
         id: "security",
