@@ -31,7 +31,7 @@
 
 import { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment, Sphere, Torus, MeshDistortMaterial, Float } from "@react-three/drei";
+import { Environment, Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
 import * as THREE from "three";
 
 /* ── Utility: random in range ── */
@@ -81,7 +81,7 @@ function ParticleField({ count = 600 }: { count?: number }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.025}
-        color="#00f3ff"
+        color="#00FF9D"
         transparent
         opacity={0.6}
         sizeAttenuation
@@ -189,7 +189,7 @@ function EnergyCore() {
       <mesh ref={glowRef}>
         <sphereGeometry args={[0.85, 32, 32]} />
         <meshBasicMaterial
-          color="#00f3ff"
+          color="#00FF9D"
           transparent
           opacity={0.07}
           blending={THREE.AdditiveBlending}
@@ -197,10 +197,10 @@ function EnergyCore() {
         />
       </mesh>
 
-      {/* Ring 1 — cyan */}
+      {/* Ring 1 — emerald */}
       <mesh ref={ring1Ref} rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.55, 0.012, 8, 120]} />
-        <meshBasicMaterial color="#00f3ff" transparent opacity={0.8} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color="#00FF9D" transparent opacity={0.8} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
 
       {/* Ring 2 — purple, tilted 55° */}
@@ -209,20 +209,20 @@ function EnergyCore() {
         <meshBasicMaterial color="#b026ff" transparent opacity={0.6} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
 
-      {/* Ring 3 — outer orange */}
+      {/* Ring 3 — outer blue */}
       <mesh rotation={[Math.PI / 1.3, Math.PI / 4, 0]}>
         <torusGeometry args={[2.3, 0.005, 8, 120]} />
-        <meshBasicMaterial color="#ff6b00" transparent opacity={0.35} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color="#0055FF" transparent opacity={0.35} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
 
       {/* Orbiting fragments */}
       {[
-        { orbitRadius: 2.8, orbitSpeed: 0.4, orbitOffset: 0, orbitTilt: 0.2, size: 0.15, color: "#00f3ff" },
+        { orbitRadius: 2.8, orbitSpeed: 0.4, orbitOffset: 0, orbitTilt: 0.2, size: 0.15, color: "#00FF9D" },
         { orbitRadius: 3.2, orbitSpeed: -0.3, orbitOffset: 1.2, orbitTilt: 0.5, size: 0.1, color: "#b026ff" },
-        { orbitRadius: 2.5, orbitSpeed: 0.6, orbitOffset: 2.5, orbitTilt: 0.3, size: 0.12, color: "#00f3ff" },
-        { orbitRadius: 3.5, orbitSpeed: -0.2, orbitOffset: 4.0, orbitTilt: 0.8, size: 0.08, color: "#ff6b00" },
+        { orbitRadius: 2.5, orbitSpeed: 0.6, orbitOffset: 2.5, orbitTilt: 0.3, size: 0.12, color: "#00FF9D" },
+        { orbitRadius: 3.5, orbitSpeed: -0.2, orbitOffset: 4.0, orbitTilt: 0.8, size: 0.08, color: "#0055FF" },
         { orbitRadius: 2.2, orbitSpeed: 0.5, orbitOffset: 3.1, orbitTilt: 0.1, size: 0.09, color: "#b026ff" },
-        { orbitRadius: 4.0, orbitSpeed: -0.15, orbitOffset: 0.8, orbitTilt: 0.4, size: 0.11, color: "#00f3ff" },
+        { orbitRadius: 4.0, orbitSpeed: -0.15, orbitOffset: 0.8, orbitTilt: 0.4, size: 0.11, color: "#00FF9D" },
       ].map((props, i) => (
         <OrbitingFragment key={i} {...props} />
       ))}
@@ -237,9 +237,9 @@ function SceneLights() {
   return (
     <>
       <ambientLight intensity={0.15} />
-      <pointLight position={[5, 5, 5]} intensity={2} color="#00f3ff" />
+      <pointLight position={[5, 5, 5]} intensity={2} color="#00FF9D" />
       <pointLight position={[-5, -3, -5]} intensity={1.5} color="#b026ff" />
-      <pointLight position={[0, -6, 3]} intensity={0.8} color="#ff6b00" />
+      <pointLight position={[0, -6, 3]} intensity={0.8} color="#0055FF" />
       <directionalLight position={[0, 10, 5]} intensity={0.5} color="#ffffff" />
     </>
   );

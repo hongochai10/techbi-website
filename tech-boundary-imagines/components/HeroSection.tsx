@@ -41,7 +41,7 @@ const HeroScene = dynamic(() => import("./HeroScene"), {
   ssr: false,
   loading: () => (
     <div className="absolute inset-0 flex items-center justify-center">
-      <div className="w-2 h-2 rounded-full bg-cyan-neon animate-pulse-glow" />
+      <div className="w-2 h-2 rounded-full bg-emerald-neon animate-pulse-glow" />
     </div>
   ),
 });
@@ -70,7 +70,7 @@ function Counter({ end, suffix = "", label }: { end: number; suffix?: string; la
 
   return (
     <div ref={ref} className="flex flex-col items-center md:items-start gap-1">
-      <span className="text-3xl md:text-4xl font-bold font-mono gradient-text-cyan">
+      <span className="text-3xl md:text-4xl font-bold font-mono gradient-text-emerald">
         {count}
         {suffix}
       </span>
@@ -159,12 +159,12 @@ export default function HeroSection() {
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight"
             >
               <span className="block text-white">Beyond</span>
-              <span className="block gradient-text-cyan text-glow-cyan">
+              <span className="block gradient-text-emerald text-glow-emerald">
                 Boundaries.
               </span>
               <span className="block text-white/90">Beyond</span>
               <span className="block" style={{
-                background: "linear-gradient(135deg, #ff6b00 0%, #b026ff 60%, #00f3ff 100%)",
+                background: "linear-gradient(135deg, #00FF9D 0%, #b026ff 60%, #0033FF 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -176,13 +176,13 @@ export default function HeroSection() {
             {/* Sub-copy */}
             <motion.p
               {...fadeUpProps(0.2)}
-              className="text-base md:text-lg text-white/50 leading-relaxed max-w-md font-light"
+              className="text-base md:text-lg text-[#B0B5C0] leading-relaxed max-w-md font-light"
             >
               We architect digital transformation at enterprise scale —
-              <span className="text-cyan-neon/80"> AI & ML</span>,{" "}
+              <span className="text-emerald-neon/80"> AI & ML</span>,{" "}
               <span className="text-purple-electric/80">Cloud Architecture</span>,{" "}
-              <span className="text-orange-neon/80">Custom Software</span>, and{" "}
-              <span className="text-cyan-neon/80">Data Analytics</span>.{" "}
+              <span className="text-blue-neon/80">Custom Software</span>, and{" "}
+              <span className="text-emerald-neon/80">Data Analytics</span>.{" "}
               From strategy to deployment, we turn vision into measurable results.
             </motion.p>
 
@@ -241,7 +241,7 @@ export default function HeroSection() {
         </span>
         <div className="w-px h-10 overflow-hidden relative">
           <motion.div
-            className="w-full bg-gradient-to-b from-cyan-neon to-transparent"
+            className="w-full bg-gradient-to-b from-emerald-neon to-transparent"
             animate={{ y: ["-100%", "200%"] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
             style={{ height: "100%" }}

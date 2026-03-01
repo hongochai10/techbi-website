@@ -184,9 +184,9 @@ const FEATURES: Feature[] = [
     label: "01 — AI",
     title: "Artificial General Intelligence",
     description: "Self-evolving neural architectures that reason, create, and adapt beyond human cognitive baselines. AGI isn't a destination — it's the departure point.",
-    accentColor: "#00f3ff",
-    glowColor: "rgba(0,243,255,0.15)",
-    icon: <AIIcon color="#00f3ff" />,
+    accentColor: "#00FF9D",
+    glowColor: "rgba(0,255,157,0.15)",
+    icon: <AIIcon color="#00FF9D" />,
     span: "wide",
   },
   {
@@ -204,9 +204,9 @@ const FEATURES: Feature[] = [
     label: "03 — NEURAL",
     title: "Neural Interface OS",
     description: "Direct brain-to-machine communication. Thought becomes command. Reality becomes programmable.",
-    accentColor: "#00f3ff",
-    glowColor: "rgba(0,243,255,0.1)",
-    icon: <NeuralIcon color="#00f3ff" />,
+    accentColor: "#0055FF",
+    glowColor: "rgba(0,85,255,0.12)",
+    icon: <NeuralIcon color="#0055FF" />,
     span: "normal",
   },
   {
@@ -214,9 +214,9 @@ const FEATURES: Feature[] = [
     label: "04 — WEB3",
     title: "Decentralised Reality",
     description: "Ownership without intermediaries. Identity without borders. Economy without gatekeepers.",
-    accentColor: "#ff6b00",
-    glowColor: "rgba(255,107,0,0.12)",
-    icon: <Web3Icon color="#ff6b00" />,
+    accentColor: "#00FF9D",
+    glowColor: "rgba(0,255,157,0.12)",
+    icon: <Web3Icon color="#00FF9D" />,
     span: "normal",
   },
   {
@@ -234,9 +234,9 @@ const FEATURES: Feature[] = [
     label: "06 — BIO",
     title: "Bio-Digital Convergence",
     description: "The merger of biological and digital substrates. Living processors. Organic memory. Synthetic cognition.",
-    accentColor: "#00f3ff",
-    glowColor: "rgba(0,243,255,0.1)",
-    icon: <BioDigitalIcon color="#00f3ff" />,
+    accentColor: "#0055FF",
+    glowColor: "rgba(0,85,255,0.12)",
+    icon: <BioDigitalIcon color="#0055FF" />,
     span: "normal",
   },
   {
@@ -244,9 +244,9 @@ const FEATURES: Feature[] = [
     label: "07 — SYNTHESIS",
     title: "Autonomous Reality Synthesis",
     description: "AI-generated persistent universes. Procedural physics. Worlds that evolve, adapt, and breathe without human intervention. The ultimate convergence of all preceding technologies into a single coherent experiential layer.",
-    accentColor: "#ff6b00",
-    glowColor: "rgba(255,107,0,0.15)",
-    icon: <SynthesisIcon color="#ff6b00" />,
+    accentColor: "#00FF9D",
+    glowColor: "rgba(0,255,157,0.15)",
+    icon: <SynthesisIcon color="#00FF9D" />,
     span: "wide",
     featured: true,
   },
@@ -271,20 +271,21 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       className={`
-        feature-card glass rounded-2xl p-6 
-        ${isFeatured ? "md:col-span-2 lg:p-8" : ""}
+        feature-card glass rounded-[24px] p-8 
+        ${isFeatured ? "md:col-span-2 lg:p-12" : "md:p-10"}
         ${isTall ? "row-span-2" : ""}
-        group relative overflow-hidden
+        group relative overflow-hidden backdrop-blur-3xl
       `}
       style={{
-        background: `linear-gradient(135deg, ${feature.glowColor} 0%, rgba(255,255,255,0.02) 100%)`,
-        border: `1px solid rgba(255,255,255,0.07)`,
+        background: `linear-gradient(135deg, ${feature.glowColor.replace(/[\d.]+\)$/g, '0.08)')} 0%, rgba(255,255,255,0.01) 100%)`,
+        border: `1px solid rgba(255,255,255,0.04)`,
       }}
       whileHover={{
-        y: -6,
-        boxShadow: `0 20px 60px rgba(0,0,0,0.5), 0 0 40px ${feature.glowColor}`,
-        borderColor: feature.accentColor + "50",
-        transition: { duration: 0.3 }
+        y: -8,
+        scale: 1.01,
+        boxShadow: `0 30px 60px rgba(0,0,0,0.6), 0 0 50px ${feature.glowColor.replace(/[\d.]+\)$/g, '0.2)')}`,
+        borderColor: feature.accentColor + "40",
+        transition: { type: "spring", stiffness: 300, damping: 20 }
       }}
     >
       {/* Hover glow overlay */}
@@ -298,11 +299,11 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
       {/* Top row: label + icon */}
       <div className="flex items-start justify-between mb-5 relative z-10">
         <span
-          className="text-[10px] font-mono font-semibold tracking-[0.2em] uppercase px-2 py-1 rounded-sm"
+          className="text-[11px] font-mono font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full"
           style={{
             color: feature.accentColor,
             background: feature.glowColor,
-            border: `1px solid ${feature.accentColor}20`,
+            border: `1px solid ${feature.accentColor}30`,
           }}
         >
           {feature.label}
@@ -320,16 +321,16 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
 
       {/* Title */}
       <h3
-        className={`font-bold leading-tight mb-3 relative z-10 ${isFeatured ? "text-2xl md:text-3xl" : "text-lg"
+        className={`font-semibold tracking-tight leading-tight mb-4 relative z-10 ${isFeatured ? "text-3xl md:text-4xl" : "text-xl"
           }`}
-        style={{ color: "rgba(255,255,255,0.92)" }}
+        style={{ color: "#ffffff" }}
       >
         {feature.title}
       </h3>
 
       {/* Description */}
       <p
-        className={`text-white/45 leading-relaxed relative z-10 ${isFeatured ? "text-base max-w-2xl" : "text-sm"
+        className={`text-[#B0B5C0] leading-relaxed relative z-10 ${isFeatured ? "text-lg max-w-2xl" : "text-[15px]"
           }`}
       >
         {feature.description}
@@ -386,10 +387,10 @@ export default function FeaturesSection() {
         >
           <div className="flex flex-col gap-4">
             <span className="section-badge">Our Capabilities</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
               <span className="text-white">Technology</span>
               <br />
-              <span className="gradient-text-cyan">Stack</span>
+              <span className="gradient-text-emerald">Stack</span>
             </h2>
           </div>
           <p className="text-white/40 max-w-sm text-sm leading-relaxed md:text-right">
@@ -398,7 +399,7 @@ export default function FeaturesSection() {
         </motion.div>
 
         {/* ── Asymmetric Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {FEATURES.map((feature, i) => (
             <FeatureCard key={feature.id} feature={feature} index={i} />
           ))}

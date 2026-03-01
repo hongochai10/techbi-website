@@ -35,7 +35,7 @@ export default function CTASection() {
                 className="absolute inset-0 pointer-events-none"
                 style={{
                     background:
-                        "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0,243,255,0.08) 0%, rgba(176,38,255,0.05) 40%, transparent 70%)",
+                        "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0,255,157,0.08) 0%, rgba(176,38,255,0.05) 40%, transparent 70%)",
                 }}
                 aria-hidden="true"
             />
@@ -74,7 +74,7 @@ export default function CTASection() {
                     <span className="text-white">Ready to </span>
                     <span
                         style={{
-                            background: "linear-gradient(135deg, #00f3ff 0%, #b026ff 50%, #ff6b00 100%)",
+                            background: "linear-gradient(135deg, #00FF9D 0%, #b026ff 50%, #0055FF 100%)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
@@ -143,7 +143,7 @@ export default function CTASection() {
                         { value: "99.9%", label: "Uptime SLA" },
                     ].map((stat) => (
                         <div key={stat.label} className="flex flex-col items-center gap-1">
-                            <span className="text-xl font-bold font-mono gradient-text-cyan">
+                            <span className="text-xl font-bold font-mono gradient-text-emerald">
                                 {stat.value}
                             </span>
                             <span className="text-[10px] text-white/30 tracking-widest uppercase font-mono">
@@ -158,7 +158,7 @@ export default function CTASection() {
             <div
                 className="absolute top-0 left-0 w-96 h-96 pointer-events-none"
                 style={{
-                    background: "radial-gradient(circle at top left, rgba(0,243,255,0.04), transparent 60%)",
+                    background: "radial-gradient(circle at top left, rgba(0,255,157,0.04), transparent 60%)",
                 }}
                 aria-hidden="true"
             />

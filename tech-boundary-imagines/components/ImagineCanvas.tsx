@@ -42,8 +42,8 @@ const CONCEPTS: Concept[] = [
     number: "001",
     title: "The Conscious Cloud",
     teaser: "Distributed AGI instances that share a unified self-awareness across global compute nodes. Consciousness as infrastructure.",
-    accent: "#00f3ff",
-    glow: "rgba(0,243,255,0.2)",
+    accent: "#00FF9D",
+    glow: "rgba(0,255,157,0.2)",
     tag: "AI × Infrastructure",
   },
   {
@@ -60,8 +60,8 @@ const CONCEPTS: Concept[] = [
     number: "003",
     title: "Neural Sovereignty",
     teaser: "The legal and technical framework for owning your own neural data. End-to-end encrypted thought. Inalienable cognitive rights.",
-    accent: "#ff6b00",
-    glow: "rgba(255,107,0,0.2)",
+    accent: "#0055FF",
+    glow: "rgba(0,85,255,0.2)",
     tag: "Neural × Ethics",
   },
   {
@@ -69,8 +69,8 @@ const CONCEPTS: Concept[] = [
     number: "004",
     title: "Morphic Interfaces",
     teaser: "UIs that reshape themselves in real time based on biometric signals, context, and predictive intent modelling.",
-    accent: "#00f3ff",
-    glow: "rgba(0,243,255,0.15)",
+    accent: "#00FF9D",
+    glow: "rgba(0,255,157,0.15)",
     tag: "UX × AI",
   },
   {
@@ -87,8 +87,8 @@ const CONCEPTS: Concept[] = [
     number: "006",
     title: "Zero-Latency Civilisation",
     teaser: "Planetary communication networks built on entangled photon pairs. Information that arrives before it is sent.",
-    accent: "#ff6b00",
-    glow: "rgba(255,107,0,0.15)",
+    accent: "#0055FF",
+    glow: "rgba(0,85,255,0.15)",
     tag: "Quantum × Comms",
   },
   {
@@ -96,8 +96,8 @@ const CONCEPTS: Concept[] = [
     number: "007",
     title: "The Post-Scarcity Stack",
     teaser: "Open-source molecular manufacturing protocols. When any device can print any material, scarcity becomes a policy choice.",
-    accent: "#00f3ff",
-    glow: "rgba(0,243,255,0.15)",
+    accent: "#00FF9D",
+    glow: "rgba(0,255,157,0.15)",
     tag: "Manufacturing × Web3",
   },
 ];
@@ -277,7 +277,7 @@ export default function ImagineCanvas() {
               <br />
               <span
                 style={{
-                  background: "linear-gradient(135deg, #b026ff, #00f3ff)",
+                  background: "linear-gradient(135deg, #b026ff, #00FF9D)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -294,7 +294,7 @@ export default function ImagineCanvas() {
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               data-cursor-hover
-              className="w-12 h-12 rounded-full glass border border-glass-border flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-cyan-neon/50 hover:shadow-neon-cyan"
+              className="w-12 h-12 rounded-full glass border border-glass-border flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-emerald-neon/50 hover:shadow-neon-emerald"
               aria-label="Scroll left"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -305,7 +305,7 @@ export default function ImagineCanvas() {
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               data-cursor-hover
-              className="w-12 h-12 rounded-full glass border border-glass-border flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-cyan-neon/50 hover:shadow-neon-cyan"
+              className="w-12 h-12 rounded-full glass border border-glass-border flex items-center justify-center transition-all duration-300 disabled:opacity-20 hover:border-emerald-neon/50 hover:shadow-neon-emerald"
               aria-label="Scroll right"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

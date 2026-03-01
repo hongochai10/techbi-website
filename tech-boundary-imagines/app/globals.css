@@ -10,10 +10,13 @@
   --void: #050505;
   --midnight: #070B18;
   --cyan-neon: #00f3ff;
+  --emerald-neon: #00FF9D;
+  --blue-neon: #0055FF;
+  --blue-deep: #0033FF;
   --purple-electric: #b026ff;
   --orange-neon: #ff6b00;
-  --glass-bg: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.05);
   --font-space-grotesk: 'Space Grotesk', sans-serif;
 }
 
@@ -61,7 +64,7 @@ body {
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(0, 243, 255, 0.5);
+  border: 1px solid rgba(0, 255, 157, 0.5);
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -97,7 +100,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--cyan-neon), var(--purple-electric));
+  background: linear-gradient(180deg, var(--emerald-neon), var(--purple-electric));
   border-radius: 2px;
 }
 
@@ -105,8 +108,8 @@ body {
    SELECTION
    ============================================================ */
 ::selection {
-  background: rgba(0, 243, 255, 0.2);
-  color: var(--cyan-neon);
+  background: rgba(0, 255, 157, 0.2);
+  color: var(--emerald-neon);
 }
 
 /* ============================================================
@@ -129,12 +132,28 @@ body {
 /* ============================================================
    NEON GLOW UTILITIES
    ============================================================ */
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.4), 0 0 60px rgba(0, 255, 157, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 51, 255, 0.4), 0 0 60px rgba(0, 51, 255, 0.15);
+}
+
 .glow-cyan {
   box-shadow: 0 0 20px rgba(0, 243, 255, 0.4), 0 0 60px rgba(0, 243, 255, 0.15);
 }
 
 .glow-purple {
   box-shadow: 0 0 20px rgba(176, 38, 255, 0.4), 0 0 60px rgba(176, 38, 255, 0.15);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 20px rgba(0, 255, 157, 0.6), 0 0 40px rgba(0, 255, 157, 0.3);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 20px rgba(0, 51, 255, 0.6), 0 0 40px rgba(0, 51, 255, 0.3);
 }
 
 .text-glow-cyan {
@@ -148,6 +167,13 @@ body {
 /* ============================================================
    GRADIENT TEXT
    ============================================================ */
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #00FF9D 0%, #0055FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .gradient-text-cyan {
   background: linear-gradient(135deg, #00f3ff 0%, #b026ff 100%);
   -webkit-background-clip: text;
@@ -156,7 +182,7 @@ body {
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, #ff6b00 0%, #b026ff 100%);
+  background: linear-gradient(135deg, #0033FF 0%, #b026ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -169,8 +195,8 @@ body {
   position: relative;
   padding: 14px 36px;
   background: transparent;
-  border: 1px solid rgba(0, 243, 255, 0.5);
-  color: var(--cyan-neon);
+  border: 1px solid rgba(0, 255, 157, 0.5);
+  color: var(--emerald-neon);
   font-family: var(--font-space-grotesk);
   font-weight: 600;
   font-size: 14px;
@@ -186,7 +212,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 243, 255, 0.15), rgba(176, 38, 255, 0.1));
+  background: linear-gradient(135deg, rgba(0, 255, 157, 0.15), rgba(0, 51, 255, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -195,7 +221,7 @@ body {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, var(--cyan-neon), var(--purple-electric));
+  background: linear-gradient(135deg, var(--emerald-neon), var(--purple-electric));
   z-index: -1;
   opacity: 0;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
@@ -204,7 +230,7 @@ body {
 
 .btn-cyber:hover {
   color: #fff;
-  box-shadow: 0 0 30px rgba(0, 243, 255, 0.4), 0 0 80px rgba(0, 243, 255, 0.15), inset 0 0 30px rgba(0, 243, 255, 0.05);
+  box-shadow: 0 0 30px rgba(0, 255, 157, 0.4), 0 0 80px rgba(0, 255, 157, 0.15), inset 0 0 30px rgba(0, 255, 157, 0.05);
 }
 
 .btn-cyber:hover::before {
@@ -255,8 +281,8 @@ body {
    GRID BACKGROUND
    ============================================================ */
 .bg-grid {
-  background-image: linear-gradient(rgba(0, 243, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 255, 157, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 157, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -269,7 +295,7 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.3), transparent);
   animation: scan-line 8s linear infinite;
   pointer-events: none;
 }
@@ -309,14 +335,14 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 243, 255, 0.06) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(0, 255, 157, 0.04) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 243, 255, 0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 157, 0.1);
 }
 
 .feature-card:hover::before {
@@ -331,23 +357,23 @@ body {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(0, 243, 255, 0.06);
-  border: 1px solid rgba(0, 243, 255, 0.2);
+  background: rgba(0, 255, 157, 0.06);
+  border: 1px solid rgba(0, 255, 157, 0.2);
   border-radius: 100px;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cyan-neon);
+  color: var(--emerald-neon);
 }
 
 .section-badge::before {
   content: '';
   width: 6px;
   height: 6px;
-  background: var(--cyan-neon);
+  background: var(--emerald-neon);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--cyan-neon);
+  box-shadow: 0 0 8px var(--emerald-neon);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
@@ -356,7 +382,7 @@ body {
    ============================================================ */
 .divider-gradient {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 243, 255, 0.4) 30%, rgba(176, 38, 255, 0.4) 70%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 157, 0.4) 30%, rgba(176, 38, 255, 0.4) 70%, transparent 100%);
 }
 
 /* ============================================================

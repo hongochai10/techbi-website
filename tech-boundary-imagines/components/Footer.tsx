@@ -99,12 +99,12 @@ export default function Footer() {
             {/* Logo */}
             <div className="flex items-center gap-3">
               <div className="relative w-9 h-9 flex-shrink-0">
-                <div className="absolute inset-0 rounded-sm border border-cyan-neon/40 animate-rotate-slow" />
+                <div className="absolute inset-0 rounded-sm border border-emerald-neon/40 animate-rotate-slow" />
                 <div className="absolute inset-[3px] rounded-sm border border-purple-electric/35 animate-counter-rotate" />
-                <div className="absolute inset-[7px] bg-cyan-neon/80 rounded-sm shadow-neon-cyan" />
+                <div className="absolute inset-[7px] bg-emerald-neon/80 rounded-sm shadow-neon-emerald" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="text-[10px] font-mono text-cyan-neon/60 tracking-[0.24em] uppercase">Tech Boundary</span>
+                <span className="text-[10px] font-mono text-emerald-neon/60 tracking-[0.24em] uppercase">Tech Boundary</span>
                 <span
                   className="text-base font-bold tracking-tight"
                   style={{
@@ -133,7 +133,7 @@ export default function Footer() {
                   id="newsletter-email"
                   type="email"
                   placeholder="you@thefuture.com"
-                  className="flex-1 bg-glass border border-glass-border rounded px-4 py-2.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-cyan-neon/50 transition-colors duration-300"
+                  className="flex-1 bg-glass border border-glass-border rounded px-4 py-2.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-emerald-neon/50 transition-colors duration-300"
                   style={{ backdropFilter: "blur(10px)" }}
                 />
                 <button className="btn-cyber text-xs px-5 py-2.5" data-cursor-hover>
@@ -149,7 +149,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-10 h-10 glass border border-glass-border rounded-lg flex items-center justify-center text-white/40 hover:text-cyan-neon hover:border-cyan-neon/40 hover:shadow-neon-cyan transition-all duration-300"
+                  className="w-10 h-10 glass border border-glass-border rounded-lg flex items-center justify-center text-white/40 hover:text-emerald-neon hover:border-emerald-neon/40 hover:shadow-neon-emerald transition-all duration-300"
                   data-cursor-hover
                 >
                   {s.icon}
@@ -214,7 +214,7 @@ export default function Footer() {
       <div
         className="absolute bottom-0 left-0 w-64 h-64 pointer-events-none"
         style={{
-          background: "radial-gradient(circle at bottom left, rgba(0,243,255,0.04), transparent 70%)",
+          background: "radial-gradient(circle at bottom left, rgba(0,255,157,0.04), transparent 70%)",
         }}
         aria-hidden="true"
       />

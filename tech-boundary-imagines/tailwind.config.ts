@@ -12,6 +12,16 @@ const config: Config = {
         void: "#050505",
         "midnight-blue": "#070B18",
         "deep-navy": "#0A0F2A",
+        emerald: {
+          neon: "#00FF9D",
+          dim: "#00cc7d",
+          muted: "rgba(0,255,157,0.15)",
+        },
+        blue: {
+          deep: "#0033FF",
+          neon: "#0055FF",
+          muted: "rgba(0,51,255,0.15)",
+        },
         cyan: {
           neon: "#00f3ff",
           dim: "#00c8d4",
@@ -22,12 +32,8 @@ const config: Config = {
           dim: "#8a1fcc",
           muted: "rgba(176,38,255,0.15)",
         },
-        orange: {
-          neon: "#ff6b00",
-          muted: "rgba(255,107,0,0.15)",
-        },
-        glass: "rgba(255,255,255,0.04)",
-        "glass-border": "rgba(255,255,255,0.08)",
+        glass: "rgba(255,255,255,0.03)",
+        "glass-border": "rgba(255,255,255,0.05)",
       },
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
@@ -37,19 +43,21 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-gradient": "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(176,38,255,0.18) 0%, rgba(0,243,255,0.10) 40%, transparent 70%)",
+        "hero-gradient": "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(176,38,255,0.15) 0%, rgba(0,255,157,0.08) 40%, transparent 70%)",
         "noise-overlay": "url('/noise.png')",
-        "grid-lines": "linear-gradient(rgba(0,243,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,243,255,0.04) 1px, transparent 1px)",
+        "grid-lines": "linear-gradient(rgba(0,255,157,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px)",
+        "mesh-fluid": "radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%)",
       },
       backgroundSize: {
         "grid": "60px 60px",
       },
       boxShadow: {
+        "neon-emerald": "0 0 20px rgba(0,255,157,0.4), 0 0 60px rgba(0,255,157,0.15)",
+        "neon-blue": "0 0 20px rgba(0,51,255,0.4), 0 0 60px rgba(0,51,255,0.15)",
         "neon-cyan": "0 0 20px rgba(0,243,255,0.4), 0 0 60px rgba(0,243,255,0.15)",
         "neon-purple": "0 0 20px rgba(176,38,255,0.4), 0 0 60px rgba(176,38,255,0.15)",
-        "neon-orange": "0 0 20px rgba(255,107,0,0.4), 0 0 60px rgba(255,107,0,0.15)",
-        "glass": "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)",
-        "card-hover": "0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0,243,255,0.12)",
+        "glass": "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
+        "card-hover": "0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0,255,157,0.1)",
       },
       keyframes: {
         "float": {
@@ -70,8 +78,8 @@ const config: Config = {
           "100%": { transform: "translateY(100vh)" },
         },
         "border-flow": {
-          "0%, 100%": { borderColor: "rgba(0,243,255,0.4)" },
-          "50%": { borderColor: "rgba(176,38,255,0.4)" },
+          "0%, 100%": { borderColor: "rgba(0,255,157,0.4)" },
+          "50%": { borderColor: "rgba(0,51,255,0.4)" },
         },
         "particle-drift": {
           "0%": { transform: "translateY(0) translateX(0) scale(1)", opacity: "0" },
@@ -91,6 +99,10 @@ const config: Config = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(-360deg)" },
         },
+        "fluid-flow": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
       },
       animation: {
         "float": "float 6s ease-in-out infinite",
@@ -102,6 +114,7 @@ const config: Config = {
         "border-flow": "border-flow 4s ease-in-out infinite",
         "rotate-slow": "rotate-slow 20s linear infinite",
         "counter-rotate": "counter-rotate 15s linear infinite",
+        "fluid-flow": "fluid-flow 15s ease infinite",
       },
       backdropBlur: {
         xs: "2px",

@@ -47,8 +47,8 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "glass border-b border-glass-border py-3"
-          : "bg-transparent py-5"
+        ? "glass border-b border-glass-border py-3"
+        : "bg-transparent py-5"
         }`}
     >
       {/* Neon accent line — appears when scrolled */}
@@ -56,7 +56,7 @@ export default function Header() {
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, rgba(0,243,255,0.5) 30%, rgba(176,38,255,0.5) 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, rgba(0,255,157,0.5) 30%, rgba(176,38,255,0.5) 70%, transparent 100%)",
           opacity: scrolled ? 1 : 0,
           transition: "opacity 0.5s ease",
         }}
@@ -69,7 +69,7 @@ export default function Header() {
             {/* Abstract logo mark */}
             <div className="relative w-8 h-8 flex-shrink-0">
               <motion.div
-                className="absolute inset-0 rounded-sm border border-cyan-neon/50 group-hover:border-cyan-neon transition-colors duration-300"
+                className="absolute inset-0 rounded-sm border border-emerald-neon/50 group-hover:border-emerald-neon transition-colors duration-300"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
@@ -78,16 +78,16 @@ export default function Header() {
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               />
-              <div className="absolute inset-[7px] bg-cyan-neon/80 rounded-sm group-hover:bg-cyan-neon transition-colors duration-300 shadow-neon-cyan" />
+              <div className="absolute inset-[7px] bg-emerald-neon/80 rounded-sm group-hover:bg-emerald-neon transition-colors duration-300 shadow-neon-emerald" />
             </div>
 
             {/* Wordmark */}
             <div className="flex flex-col leading-none">
-              <span className="text-[11px] font-mono text-cyan-neon/60 tracking-[0.22em] uppercase group-hover:text-cyan-neon/90 transition-colors duration-300">
+              <span className="text-[11px] font-mono text-emerald-neon/60 tracking-[0.22em] uppercase group-hover:text-emerald-neon/90 transition-colors duration-300">
                 Tech Boundary
               </span>
               <span
-                className="text-[15px] font-bold tracking-tight text-white group-hover:gradient-text-cyan transition-all duration-300"
+                className="text-[15px] font-bold tracking-tight text-white group-hover:gradient-text-emerald transition-all duration-300"
                 style={{
                   background: "linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.85) 100%)",
                   WebkitBackgroundClip: "text",
@@ -116,7 +116,7 @@ export default function Header() {
               >
                 {link.label}
                 {/* Animated underline */}
-                <span className="absolute bottom-0.5 left-4 right-4 h-px bg-gradient-to-r from-cyan-neon to-purple-electric scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <span className="absolute bottom-0.5 left-4 right-4 h-px bg-gradient-to-r from-emerald-neon to-purple-electric scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
             </motion.div>
           ))}
@@ -142,15 +142,15 @@ export default function Header() {
             aria-label="Toggle mobile menu"
           >
             <span
-              className={`block w-6 h-px bg-cyan-neon transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""
+              className={`block w-6 h-px bg-emerald-neon transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""
                 }`}
             />
             <span
-              className={`block w-4 h-px bg-cyan-neon/60 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
+              className={`block w-4 h-px bg-emerald-neon/60 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""
                 }`}
             />
             <span
-              className={`block w-6 h-px bg-cyan-neon transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""
+              className={`block w-6 h-px bg-emerald-neon transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
             />
           </button>
@@ -170,7 +170,7 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="py-3 text-sm font-medium text-white/70 hover:text-cyan-neon transition-colors duration-300 border-b border-glass-border last:border-b-0"
+              className="py-3 text-sm font-medium text-white/70 hover:text-emerald-neon transition-colors duration-300 border-b border-glass-border last:border-b-0"
             >
               {link.label}
             </Link>

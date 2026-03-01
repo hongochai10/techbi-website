@@ -27,7 +27,7 @@ const TESTIMONIALS: Testimonial[] = [
         author: "Sarah Chen",
         role: "CTO",
         company: "NovaPay Financial",
-        accent: "#00f3ff",
+        accent: "#00FF9D",
     },
     {
         id: "t2",
@@ -45,7 +45,7 @@ const TESTIMONIALS: Testimonial[] = [
         author: "James Whitfield",
         role: "CEO",
         company: "Vertex Commerce Group",
-        accent: "#ff6b00",
+        accent: "#0055FF",
     },
 ];
 
@@ -106,7 +106,7 @@ export default function TestimonialsSection() {
                         <span className="text-white">What Our</span>{" "}
                         <span
                             style={{
-                                background: "linear-gradient(135deg, #b026ff, #00f3ff)",
+                                background: "linear-gradient(135deg, #b026ff, #00FF9D)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -184,8 +184,8 @@ export default function TestimonialsSection() {
                             onClick={() => setActive(i)}
                             data-cursor-hover
                             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === active
-                                    ? "scale-125"
-                                    : "bg-white/20 hover:bg-white/40"
+                                ? "scale-125"
+                                : "bg-white/20 hover:bg-white/40"
                                 }`}
                             style={
                                 i === active

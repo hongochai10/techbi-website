@@ -95,9 +95,9 @@ const SERVICES: Service[] = [
         title: "AI & Machine Learning",
         description:
             "Intelligent automation, predictive analytics, and natural language processing solutions that transform raw data into strategic business advantage.",
-        accent: "#00f3ff",
-        glow: "rgba(0,243,255,0.12)",
-        icon: <AIMLIcon color="#00f3ff" />,
+        accent: "#00FF9D",
+        glow: "rgba(0,255,157,0.12)",
+        icon: <AIMLIcon color="#00FF9D" />,
     },
     {
         id: "cloud",
@@ -115,9 +115,9 @@ const SERVICES: Service[] = [
         title: "Custom Software Development",
         description:
             "Full-stack engineering with microservices, event-driven architectures, and real-time systems. Built to perform at enterprise scale.",
-        accent: "#ff6b00",
-        glow: "rgba(255,107,0,0.12)",
-        icon: <CodeIcon color="#ff6b00" />,
+        accent: "#0055FF",
+        glow: "rgba(0,85,255,0.12)",
+        icon: <CodeIcon color="#0055FF" />,
     },
     {
         id: "data",
@@ -125,9 +125,9 @@ const SERVICES: Service[] = [
         title: "Data Analytics & BI",
         description:
             "End-to-end data pipelines, interactive dashboards, and decision intelligence platforms that turn complexity into clarity.",
-        accent: "#00f3ff",
-        glow: "rgba(0,243,255,0.10)",
-        icon: <DataIcon color="#00f3ff" />,
+        accent: "#00FF9D",
+        glow: "rgba(0,255,157,0.10)",
+        icon: <DataIcon color="#00FF9D" />,
     },
     {
         id: "strategy",
@@ -145,9 +145,9 @@ const SERVICES: Service[] = [
         title: "Cybersecurity",
         description:
             "Zero-trust architecture, threat intelligence, penetration testing, and regulatory compliance. Protecting your digital frontier.",
-        accent: "#ff6b00",
-        glow: "rgba(255,107,0,0.10)",
-        icon: <SecurityIcon color="#ff6b00" />,
+        accent: "#0055FF",
+        glow: "rgba(0,85,255,0.10)",
+        icon: <SecurityIcon color="#0055FF" />,
     },
 ];
 
@@ -166,16 +166,17 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
             }}
-            className="feature-card glass rounded-2xl p-7 group relative overflow-hidden"
+            className="feature-card glass rounded-[20px] p-9 group relative overflow-hidden backdrop-blur-3xl"
             style={{
-                background: `linear-gradient(145deg, ${service.glow} 0%, rgba(255,255,255,0.02) 100%)`,
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: `linear-gradient(145deg, ${service.glow.replace(/[\d.]+\)$/g, '0.08)')} 0%, rgba(255,255,255,0.01) 100%)`,
+                border: "1px solid rgba(255,255,255,0.04)",
             }}
             whileHover={{
-                y: -6,
-                boxShadow: `0 20px 60px rgba(0,0,0,0.5), 0 0 40px ${service.glow}`,
-                borderColor: service.accent + "50",
-                transition: { duration: 0.3 },
+                y: -8,
+                scale: 1.01,
+                boxShadow: `0 30px 60px rgba(0,0,0,0.6), 0 0 50px ${service.glow.replace(/[\d.]+\)$/g, '0.2)')}`,
+                borderColor: service.accent + "40",
+                transition: { type: "spring", stiffness: 300, damping: 20 },
             }}
         >
             {/* Hover glow overlay */}
@@ -189,11 +190,11 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             {/* Top: number + icon */}
             <div className="flex items-start justify-between mb-6 relative z-10">
                 <span
-                    className="text-[10px] font-mono font-semibold tracking-[0.2em] uppercase px-2.5 py-1 rounded-sm"
+                    className="text-[11px] font-mono font-bold tracking-[0.25em] uppercase px-3 py-1.5 rounded-full"
                     style={{
                         color: service.accent,
                         background: service.glow,
-                        border: `1px solid ${service.accent}20`,
+                        border: `1px solid ${service.accent}30`,
                     }}
                 >
                     {service.number}
@@ -211,14 +212,14 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
             {/* Title */}
             <h3
-                className="text-xl font-bold leading-tight mb-3 relative z-10"
-                style={{ color: "rgba(255,255,255,0.92)" }}
+                className="text-2xl font-semibold tracking-tight leading-tight mb-4 relative z-10"
+                style={{ color: "#ffffff" }}
             >
                 {service.title}
             </h3>
 
             {/* Description */}
-            <p className="text-white/40 text-sm leading-relaxed relative z-10 mb-5">
+            <p className="text-[#B0B5C0] text-[15px] leading-relaxed relative z-10 mb-6">
                 {service.description}
             </p>
 
@@ -291,10 +292,10 @@ export default function ServicesSection() {
                 >
                     <div className="flex flex-col gap-4">
                         <span className="section-badge">Our Services</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
                             <span className="text-white">Digital Transformation</span>
                             <br />
-                            <span className="gradient-text-cyan">Solutions</span>
+                            <span className="gradient-text-emerald">Solutions</span>
                         </h2>
                     </div>
                     <p className="text-white/40 max-w-sm text-sm leading-relaxed md:text-right">
