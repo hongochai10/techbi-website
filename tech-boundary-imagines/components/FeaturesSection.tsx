@@ -372,8 +372,8 @@ export default function FeaturesSection() {
 
       {/* Top gradient fade from hero */}
       <div
-        className="absolute top-0 left-0 right-0 h-32"
-        style={{ background: "linear-gradient(180deg, #050505, transparent)" }}
+        className="absolute top-0 left-0 right-0 h-32 transition-colors"
+        style={{ background: "linear-gradient(180deg, var(--void), transparent)" }}
         aria-hidden="true"
       />
 
@@ -407,10 +407,10 @@ export default function FeaturesSection() {
         </div>
       </div>
 
-      {/* Bottom fade */}
+      {/* Bottom horizon fade */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-32"
-        style={{ background: "linear-gradient(0deg, #050505, transparent)" }}
+        className="absolute bottom-0 left-0 right-0 h-40 transition-colors"
+        style={{ background: "linear-gradient(180deg, var(--void), transparent)" }}
         aria-hidden="true"
       />
     </section>
