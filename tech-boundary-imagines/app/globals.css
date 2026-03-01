@@ -10,10 +10,10 @@
   --void: #ffffff;
   --midnight: #f8fafc;
   --cyan-neon: #009cb3;
-  --emerald-neon: #008855;
+  --emerald-neon: 0, 136, 85;
   --blue-neon: #0044cc;
   --blue-deep: #002299;
-  --purple-electric: #8a1fcc;
+  --purple-electric: 138, 31, 204;
   --orange-neon: #cc5500;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.08);
@@ -28,10 +28,10 @@
   --void: #050505;
   --midnight: #070B18;
   --cyan-neon: #00f3ff;
-  --emerald-neon: #00FF9D;
+  --emerald-neon: 0, 255, 157;
   --blue-neon: #0055FF;
   --blue-deep: #0033FF;
-  --purple-electric: #b026ff;
+  --purple-electric: 176, 38, 255;
   --orange-neon: #ff6b00;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.05);
@@ -99,8 +99,8 @@ body {
 .cursor-dot.hover {
   width: 12px;
   height: 12px;
-  background: var(--purple-electric);
-  box-shadow: 0 0 15px var(--purple-electric), 0 0 30px rgba(176, 38, 255, 0.5);
+  background: rgb(var(--purple-electric));
+  box-shadow: 0 0 15px rgb(var(--purple-electric)), 0 0 30px rgba(176, 38, 255, 0.5);
 }
 
 .cursor-ring.hover {
@@ -121,7 +121,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--emerald-neon), var(--purple-electric));
+  background: linear-gradient(180deg, rgb(var(--emerald-neon)), rgb(var(--purple-electric)));
   border-radius: 2px;
 }
 
@@ -130,7 +130,7 @@ body {
    ============================================================ */
 ::selection {
   background: rgba(0, 255, 157, 0.2);
-  color: var(--emerald-neon);
+  color: rgb(var(--emerald-neon));
 }
 
 /* ============================================================
@@ -217,7 +217,7 @@ body {
   padding: 14px 36px;
   background: transparent;
   border: 1px solid rgba(0, 255, 157, 0.5);
-  color: var(--emerald-neon);
+  color: rgb(var(--emerald-neon));
   font-family: var(--font-space-grotesk);
   font-weight: 600;
   font-size: 14px;
@@ -242,7 +242,7 @@ body {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, var(--emerald-neon), var(--purple-electric));
+  background: linear-gradient(135deg, rgb(var(--emerald-neon)), rgb(var(--purple-electric)));
   z-index: -1;
   opacity: 0;
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
@@ -385,16 +385,16 @@ body {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--emerald-neon);
+  color: rgb(var(--emerald-neon));
 }
 
 .section-badge::before {
   content: '';
   width: 6px;
   height: 6px;
-  background: var(--emerald-neon);
+  background: rgb(var(--emerald-neon));
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--emerald-neon);
+  box-shadow: 0 0 8px rgb(var(--emerald-neon));
   animation: pulse-glow 2s ease-in-out infinite;
 }
 

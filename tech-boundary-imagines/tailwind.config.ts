@@ -14,9 +14,9 @@ const config: Config = {
         "midnight-blue": "var(--midnight)",
         "deep-navy": "#0A0F2A",
         emerald: {
-          neon: "#00FF9D",
+          neon: "rgba(var(--emerald-neon), <alpha-value>)",
           dim: "#00cc7d",
-          muted: "rgba(0,255,157,0.15)",
+          muted: "rgba(var(--emerald-neon), 0.15)",
         },
         blue: {
           deep: "#0033FF",
@@ -29,9 +29,9 @@ const config: Config = {
           muted: "rgba(0,243,255,0.15)",
         },
         purple: {
-          electric: "#b026ff",
+          electric: "rgba(var(--purple-electric), <alpha-value>)",
           dim: "#8a1fcc",
-          muted: "rgba(176,38,255,0.15)",
+          muted: "rgba(var(--purple-electric), 0.15)",
         },
         glass: "rgba(255,255,255,0.03)",
         "glass-border": "rgba(255,255,255,0.05)",
