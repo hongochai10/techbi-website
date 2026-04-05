@@ -3,25 +3,26 @@
         "nav": {
             "services": "Services",
             "caseStudies": "Case Studies",
+            "openSource": "Open Source",
             "capabilities": "Capabilities",
             "contact": "Contact"
         },
         "cta": "Get Started"
     },
     "Hero": {
-        "badge": "Est. 2025 — Digital Transformation Leader",
+        "badge": "Est. 2025 — AI & Quantum Innovation",
         "tagline": {
             "p1": "Beyond",
             "p2": "Boundaries.",
             "p3": "Beyond",
             "p4": "Imagination."
         },
-        "description": "We architect digital transformation at enterprise scale — <ai> AI & ML</ai>, <cloud>Cloud Architecture</cloud>, <software>Custom Software</software>, and <data>Data Analytics</data>. From strategy to deployment, we turn vision into measurable results.",
+        "description": "We build intelligent solutions at the intersection of <ai>AI & ML</ai>, <cloud>Cloud Architecture</cloud>, <software>Custom Software</software>, and <data>Data Analytics</data>. Focused on AI and Quantum technologies — turning research into real-world impact.",
         "ctaPrimary": "Start Your Transformation",
         "ctaSecondary": "View Our Work",
         "stats": {
             "projects": "Projects Delivered",
-            "clients": "Enterprise Clients",
+            "clients": "Clients Served",
             "satisfaction": "Client Satisfaction"
         },
         "scroll": "Scroll"
@@ -34,43 +35,33 @@
             "badge": "Our Capabilities",
             "p1": "Technology",
             "p2": "Stack",
-            "description": "Seven paradigm-shifting technologies we master to deliver transformative solutions across industries and verticals."
+            "description": "Five core technology domains we master to deliver practical, cutting-edge solutions for businesses ready to embrace AI and Quantum."
         },
         "items": {
             "agi": {
                 "label": "01 — AI",
-                "title": "Artificial General Intelligence",
-                "description": "Self-evolving neural architectures that reason, create, and adapt beyond human cognitive baselines. AGI isn't a destination — it's the departure point."
+                "title": "AI & Machine Learning",
+                "description": "Deep learning, NLP, and computer vision models tailored to your business. From predictive analytics to intelligent automation — we turn data into decisions."
             },
             "quantum": {
                 "label": "02 — QUANTUM",
-                "title": "Quantum Entanglement Computing",
-                "description": "Harness superposition and entanglement to solve computations that classical machines would take millennia to resolve."
+                "title": "Quantum Computing & PQC",
+                "description": "Quantum algorithm research, post-quantum cryptography (PQC), and quantum-safe migration strategies. Preparing your systems for the quantum era."
             },
-            "neural": {
-                "label": "03 — NEURAL",
-                "title": "Neural Interface OS",
-                "description": "Direct brain-to-machine communication. Thought becomes command. Reality becomes programmable."
+            "cloud": {
+                "label": "03 — CLOUD",
+                "title": "Cloud Native Architecture",
+                "description": "Kubernetes orchestration, microservices, and serverless design. We build infrastructure that scales with your growth while keeping costs lean."
             },
-            "web3": {
-                "label": "04 — WEB3",
-                "title": "Decentralised Reality",
-                "description": "Ownership without intermediaries. Identity without borders. Economy without gatekeepers."
+            "data": {
+                "label": "04 — DATA",
+                "title": "Data Engineering & Analytics",
+                "description": "End-to-end data pipelines, real-time streaming, and interactive dashboards. Transforming raw data into actionable business intelligence."
             },
-            "photonic": {
-                "label": "05 — PHOTONIC",
-                "title": "Photonic Processing",
-                "description": "Light-speed data transmission through silicon photonics. Zero latency. Infinite bandwidth."
-            },
-            "bio": {
-                "label": "06 — BIO",
-                "title": "Bio-Digital Convergence",
-                "description": "The merger of biological and digital substrates. Living processors. Organic memory. Synthetic cognition."
-            },
-            "synthesis": {
-                "label": "07 — SYNTHESIS",
-                "title": "Autonomous Reality Synthesis",
-                "description": "AI-generated persistent universes. Procedural physics. Worlds that evolve, adapt, and breathe without human intervention. The ultimate convergence of all preceding technologies into a single coherent experiential layer."
+            "security": {
+                "label": "05 — SECURITY",
+                "title": "Cybersecurity & Compliance",
+                "description": "Zero-trust architecture, quantum-safe encryption, and automated threat detection. Security built into every layer from day one."
             }
         }
     },
@@ -88,11 +79,11 @@
             },
             "cloud": {
                 "title": "Cloud Architecture",
-                "description": "Multi-cloud, serverless, and Kubernetes orchestration strategies. We design infrastructure that scales infinitely while optimizing cost."
+                "description": "Multi-cloud, serverless, and Kubernetes orchestration strategies. We design infrastructure that scales efficiently while optimizing cost."
             },
             "software": {
                 "title": "Custom Software Development",
-                "description": "Full-stack engineering with microservices, event-driven architectures, and real-time systems. Built to perform at enterprise scale."
+                "description": "Full-stack engineering with microservices, event-driven architectures, and real-time systems. Built to perform and scale with your needs."
             },
             "data": {
                 "title": "Data Analytics & BI",
@@ -100,7 +91,7 @@
             },
             "strategy": {
                 "title": "Digital Strategy Consulting",
-                "description": "Technology roadmapping, process optimization, and organizational change management for enterprises navigating digital transformation."
+                "description": "Technology roadmapping, process optimization, and organizational change management for businesses navigating digital transformation."
             },
             "security": {
                 "title": "Cybersecurity & Compliance",
@@ -113,28 +104,55 @@
             "badge": "Case Studies",
             "p1": "Proven",
             "p2": "Results",
-            "description": "Real projects. Measurable impact. We deliver transformation that moves the needle for enterprise clients."
+            "description": "Real projects. Measurable impact. We deliver solutions that make a tangible difference for our clients."
         },
         "items": {
             "fintech": {
                 "industry": "FinTech",
-                "title": "Next-Gen Payment Processing Platform",
-                "description": "Architected a microservices-based payment gateway handling 50M+ daily transactions with sub-100ms latency. Migrated from monolith to event-driven architecture on Kubernetes.",
+                "title": "Payment Processing Modernization",
+                "description": "Rebuilt a legacy payment gateway into a microservices architecture handling 500K+ daily transactions with sub-200ms latency on Kubernetes.",
                 "metricLabel": "Processing Speed Increase"
             },
             "healthcare": {
                 "industry": "Healthcare AI",
-                "title": "AI-Powered Diagnostic Intelligence",
-                "description": "Built a deep learning diagnostic platform that analyzes medical imaging with 97.3% accuracy. Integrated with hospital EHR systems across 200+ facilities nationwide.",
+                "title": "AI-Powered Diagnostic Assistant",
+                "description": "Developed a deep learning platform for medical image analysis with 95.8% accuracy, integrated with EHR systems across 15+ healthcare facilities.",
                 "metricLabel": "Reduction in Diagnostic Time"
             },
             "ecommerce": {
                 "industry": "E-Commerce",
-                "title": "Enterprise Commerce Transformation",
-                "description": "End-to-end digital transformation of a Fortune 500 retail platform. Real-time inventory, AI recommendations, and omnichannel orchestration serving 12M monthly active users.",
+                "title": "Smart Commerce Platform",
+                "description": "End-to-end digital transformation for a mid-size retail platform. Real-time inventory, AI-driven recommendations, and omnichannel integration serving 200K+ monthly users.",
                 "metricLabel": "Additional Revenue in 6 Months"
             }
         }
+    },
+    "OpenSource": {
+        "header": {
+            "badge": "Open Source",
+            "p1": "Community",
+            "p2": "Projects",
+            "description": "We believe in learning by building. Our open-source projects explore cryptography, quantum computing, and post-quantum security."
+        },
+        "items": {
+            "cryptoTimeline": {
+                "title": "Crypto Timeline",
+                "description": "An interactive visual timeline tracing the history of cryptography — from ancient ciphers to modern quantum-resistant algorithms.",
+                "tag": "Cryptography"
+            },
+            "pqcPlayground": {
+                "title": "PQC Playground",
+                "description": "A hands-on interactive platform to explore Post-Quantum Cryptography algorithms. Compare, test, and understand the future of encryption.",
+                "tag": "Quantum Security"
+            },
+            "whyQuantumBreaksRSA": {
+                "title": "Why Quantum Breaks RSA",
+                "description": "A visual, step-by-step explanation of how quantum computers threaten RSA encryption using Shor's algorithm.",
+                "tag": "Quantum Computing"
+            }
+        },
+        "liveDemo": "Live Demo",
+        "viewSource": "Source Code"
     },
     "Testimonials": {
         "header": {
@@ -144,19 +162,19 @@
         },
         "items": {
             "t1": {
-                "quote": "TechBI didn't just deliver a product — they architected a competitive advantage. Our platform now processes 10x the volume at half the cost. The engineering depth and strategic thinking are world-class.",
+                "quote": "TechBI delivered exactly what we needed — a modern payment system that handles our growing transaction volume without breaking a sweat. Their engineering team is sharp and responsive.",
                 "author": "Sarah Chen",
                 "role": "CTO",
                 "company": "NovaPay Financial"
             },
             "t2": {
-                "quote": "Working with TechBI felt like adding a senior engineering team overnight. Their AI diagnostic platform reduced our reporting cycle from weeks to hours, and their team understood healthcare compliance from day one.",
+                "quote": "Working with TechBI felt like extending our own team. Their AI diagnostic platform reduced our reporting cycle from weeks to hours, and they understood healthcare compliance from day one.",
                 "author": "Dr. Marcus Rivera",
                 "role": "VP of Innovation",
                 "company": "MedCore Health Systems"
             },
             "t3": {
-                "quote": "From strategy to execution, TechBI is the real deal. They transformed our entire digital infrastructure — cloud migration, microservices, real-time analytics — all delivered ahead of schedule. Best tech partner we've ever had.",
+                "quote": "From strategy to execution, TechBI is the real deal. They modernized our entire infrastructure — cloud migration, microservices, real-time analytics — all delivered on schedule.",
                 "author": "James Whitfield",
                 "role": "CEO",
                 "company": "Vertex Commerce Group"
@@ -168,17 +186,17 @@
         "p1": "Ready to",
         "p2": "Transform",
         "p3": "Your Business?",
-        "description": "Let's architect something extraordinary together. From strategy to deployment, we're your end-to-end technology partner.",
+        "description": "Let's build something extraordinary together. From strategy to deployment, we're your end-to-end technology partner.",
         "button1": "Schedule a Consultation",
         "button2": "View Our Portfolio",
         "stats": {
             "s1": {
-                "value": "150+",
+                "value": "20+",
                 "label": "Projects Delivered"
             },
             "s2": {
-                "value": "50+",
-                "label": "Enterprise Clients"
+                "value": "15+",
+                "label": "Clients Served"
             },
             "s3": {
                 "value": "99.9%",
@@ -187,7 +205,7 @@
         }
     },
     "Footer": {
-        "description": "A leading digital transformation company architecting the future of enterprise technology. From strategy to deployment — we build what moves businesses forward.",
+        "description": "A technology company specializing in AI and Quantum computing. We build intelligent solutions that bridge cutting-edge research and real business value.",
         "newsletterLabel": "Join the Frontier",
         "newsletterPlaceholder": "you@thefuture.com",
         "copyright": "© 2025 Tech Boundary Imagination. All rights reserved."

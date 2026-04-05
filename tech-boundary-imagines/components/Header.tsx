@@ -31,6 +31,7 @@ export default function Header() {
   const NAV_LINKS = [
     { label: tNav("services"), href: "#services" },
     { label: tNav("caseStudies"), href: "#case-studies" },
+    { label: tNav("openSource"), href: "#open-source" },
     { label: tNav("capabilities"), href: "#features" },
     { label: tNav("contact"), href: "#cta" },
   ];

@@ -221,8 +221,8 @@ export default function HeroSection() {
             >
               <div className="divider-gradient mb-6" />
               <div className="flex flex-wrap gap-10 md:gap-14" style={{ display: "flex", flexWrap: "wrap", gap: "2.5rem" }}>
-                <Counter end={150} suffix="+" label={t("stats.projects")} />
-                <Counter end={50} suffix="+" label={t("stats.clients")} />
+                <Counter end={20} suffix="+" label={t("stats.projects")} />
+                <Counter end={15} suffix="+" label={t("stats.clients")} />
                 <Counter end={98} suffix="%" label={t("stats.satisfaction")} />
               </div>
             </motion.div>

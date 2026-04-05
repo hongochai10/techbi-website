@@ -11,6 +11,7 @@ import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
 import ServicesSection from "@/components/ServicesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
+import OpenSourceSection from "@/components/OpenSourceSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ImagineCanvas from "@/components/ImagineCanvas";
@@ -32,6 +33,7 @@ export default function HomePage() {
         <TrustBar />
         <ServicesSection />
         <CaseStudiesSection />
+        <OpenSourceSection />
         <FeaturesSection />
         <TestimonialsSection />
         <ImagineCanvas />

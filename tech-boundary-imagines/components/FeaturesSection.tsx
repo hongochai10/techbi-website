@@ -23,13 +23,11 @@
  *   • Scroll-triggered entrance: staggered from bottom
  *
  * TECHNOLOGIES FEATURED:
- *   1. Artificial General Intelligence
- *   2. Quantum Entanglement Computing
- *   3. Neural Interface OS
- *   4. Decentralised Reality (Web3)
- *   5. Photonic Processing
- *   6. Bio-Digital Convergence
- *   7. Autonomous Reality Synthesis (featured/wide)
+ *   1. AI & Machine Learning
+ *   2. Quantum Computing & PQC
+ *   3. Cloud Native Architecture
+ *   4. Data Engineering & Analytics
+ *   5. Cybersecurity & Compliance
  */
 
 import { useRef } from "react";
@@ -91,91 +89,32 @@ const QuantumIcon = ({ color }: { color: string }) => (
   </svg>
 );
 
-const NeuralIcon = ({ color }: { color: string }) => (
+const CloudIcon = ({ color }: { color: string }) => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M20 5 C10 5, 5 12, 8 20 C5 28, 10 35, 20 35 C30 35, 35 28, 32 20 C35 12, 30 5, 20 5Z" stroke={color} strokeWidth="1.2" fill="none" opacity="0.5" />
-    <line x1="12" y1="15" x2="20" y2="20" stroke={color} strokeWidth="1" />
-    <line x1="28" y1="15" x2="20" y2="20" stroke={color} strokeWidth="1" />
-    <line x1="12" y1="25" x2="20" y2="20" stroke={color} strokeWidth="1" />
-    <line x1="28" y1="25" x2="20" y2="20" stroke={color} strokeWidth="1" />
-    <line x1="20" y1="8" x2="20" y2="20" stroke={color} strokeWidth="1" />
-    <circle cx="20" cy="20" r="2.5" fill={color} />
-    {[[12, 15], [28, 15], [12, 25], [28, 25], [20, 8], [20, 32]].map(([cx, cy], i) => (
-      <circle key={i} cx={cx} cy={cy} r="2" fill={color} opacity="0.7" />
-    ))}
+    <path d="M10 28c-3.3 0-6-2.7-6-6s2.7-6 6-6c.5-4.4 4.2-8 8.8-8 4 0 7.3 2.6 8.4 6.2C28 13.5 29 13 30 13c3.3 0 6 2.7 6 6s-2.7 6-6 6H10z" stroke={color} strokeWidth="1.3" fill="none" opacity="0.6" />
+    <circle cx="20" cy="22" r="2" fill={color} opacity="0.8" />
+    <line x1="14" y1="22" x2="20" y2="22" stroke={color} strokeWidth="0.8" opacity="0.4" />
+    <line x1="20" y1="22" x2="26" y2="22" stroke={color} strokeWidth="0.8" opacity="0.4" />
+    <line x1="20" y1="17" x2="20" y2="22" stroke={color} strokeWidth="0.8" opacity="0.4" />
   </svg>
 );
 
-const Web3Icon = ({ color }: { color: string }) => (
+const DataIcon = ({ color }: { color: string }) => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <polygon points="20,4 36,14 36,26 20,36 4,26 4,14" stroke={color} strokeWidth="1.2" fill="none" opacity="0.6" />
-    <polygon points="20,10 30,16 30,24 20,30 10,24 10,16" stroke={color} strokeWidth="1" fill="none" opacity="0.4" />
-    <circle cx="20" cy="20" r="3" fill={color} opacity="0.9" />
-    {[[20, 4], [36, 14], [36, 26], [20, 36], [4, 26], [4, 14]].map(([cx, cy], i) => (
-      <line key={i} x1={cx} y1={cy} x2="20" y2="20" stroke={color} strokeWidth="0.6" opacity="0.3" />
-    ))}
+    <rect x="6" y="24" width="6" height="12" rx="1" stroke={color} strokeWidth="1.2" fill="none" opacity="0.5" />
+    <rect x="14" y="16" width="6" height="20" rx="1" stroke={color} strokeWidth="1.2" fill="none" opacity="0.6" />
+    <rect x="22" y="8" width="6" height="28" rx="1" stroke={color} strokeWidth="1.2" fill="none" opacity="0.7" />
+    <rect x="30" y="12" width="6" height="24" rx="1" stroke={color} strokeWidth="1.2" fill="none" opacity="0.8" />
+    <line x1="4" y1="36" x2="38" y2="36" stroke={color} strokeWidth="1" opacity="0.3" />
   </svg>
 );
 
-const PhotonicIcon = ({ color }: { color: string }) => (
+const SecurityIcon = ({ color }: { color: string }) => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <rect x="8" y="17" width="24" height="6" rx="1" stroke={color} strokeWidth="1.2" fill="none" opacity="0.5" />
-    {[10, 14, 18, 22, 26, 30].map((x, i) => (
-      <line key={i} x1={x} y1="4" x2={x + (i % 2 === 0 ? 2 : -2)} y2="36" stroke={color} strokeWidth="0.8" opacity={0.2 + i * 0.08} />
-    ))}
-    <circle cx="20" cy="20" r="2" fill={color} />
-  </svg>
-);
-
-const BioDigitalIcon = ({ color }: { color: string }) => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M20 4 Q28 12, 20 20 Q12 28, 20 36" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" />
-    <path d="M20 4 Q12 12, 20 20 Q28 28, 20 36" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6" />
-    {[8, 12, 16, 20, 24, 28, 32].map((y, i) => (
-      <line key={i} x1={20 - 5} y1={y} x2={20 + 5} y2={y} stroke={color} strokeWidth="1" opacity="0.4" />
-    ))}
-    <circle cx="20" cy="20" r="2" fill={color} />
-  </svg>
-);
-
-/* Pre-computed coords for angles [0,45,90,135,180,225,270,315] at radii 6 & 18, center 24 */
-const SYNTH_INNER = [
-  { x: 30, y: 24 },
-  { x: 28.24, y: 28.24 },
-  { x: 24, y: 30 },
-  { x: 19.76, y: 28.24 },
-  { x: 18, y: 24 },
-  { x: 19.76, y: 19.76 },
-  { x: 24, y: 18 },
-  { x: 28.24, y: 19.76 },
-];
-const SYNTH_OUTER = [
-  { x: 42, y: 24 },
-  { x: 36.73, y: 36.73 },
-  { x: 24, y: 42 },
-  { x: 11.27, y: 36.73 },
-  { x: 6, y: 24 },
-  { x: 11.27, y: 11.27 },
-  { x: 24, y: 6 },
-  { x: 36.73, y: 11.27 },
-];
-
-const SynthesisIcon = ({ color }: { color: string }) => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <circle cx="24" cy="24" r="18" stroke={color} strokeWidth="1" opacity="0.3" strokeDasharray="4 3" />
-    <circle cx="24" cy="24" r="12" stroke={color} strokeWidth="1.2" opacity="0.5" />
-    <circle cx="24" cy="24" r="6" stroke={color} strokeWidth="1.5" opacity="0.8" />
-    <circle cx="24" cy="24" r="2.5" fill={color} />
-    {SYNTH_INNER.map((inner, i) => (
-      <line
-        key={i}
-        x1={inner.x}
-        y1={inner.y}
-        x2={SYNTH_OUTER[i].x}
-        y2={SYNTH_OUTER[i].y}
-        stroke={color} strokeWidth="0.7" opacity="0.35"
-      />
-    ))}
+    <path d="M20 4 L34 10 V22 C34 30 28 36 20 38 C12 36 6 30 6 22 V10 L20 4Z" stroke={color} strokeWidth="1.3" fill="none" opacity="0.6" />
+    <circle cx="20" cy="20" r="4" stroke={color} strokeWidth="1.2" fill="none" opacity="0.7" />
+    <circle cx="20" cy="20" r="1.5" fill={color} opacity="0.9" />
+    <line x1="20" y1="24" x2="20" y2="28" stroke={color} strokeWidth="1.2" opacity="0.5" />
   </svg>
 );
 
@@ -198,56 +137,36 @@ const getFeatures = (tItems: (key: string) => string): Feature[] => [
     accentColor: "rgb(var(--purple-electric))",
     glowColor: "rgba(var(--purple-electric), 0.15)",
     icon: <QuantumIcon color="rgb(var(--purple-electric))" />,
-    span: "tall",
-  },
-  {
-    id: "neural",
-    label: tItems("neural.label"),
-    title: tItems("neural.title"),
-    description: tItems("neural.description"),
-    accentColor: "rgb(var(--blue-neon))",
-    glowColor: "rgba(var(--blue-neon), 0.15)",
-    icon: <NeuralIcon color="rgb(var(--blue-neon))" />,
     span: "normal",
   },
   {
-    id: "web3",
-    label: tItems("web3.label"),
-    title: tItems("web3.title"),
-    description: tItems("web3.description"),
+    id: "cloud",
+    label: tItems("cloud.label"),
+    title: tItems("cloud.title"),
+    description: tItems("cloud.description"),
+    accentColor: "rgb(var(--blue-neon))",
+    glowColor: "rgba(var(--blue-neon), 0.15)",
+    icon: <CloudIcon color="rgb(var(--blue-neon))" />,
+    span: "normal",
+  },
+  {
+    id: "data",
+    label: tItems("data.label"),
+    title: tItems("data.title"),
+    description: tItems("data.description"),
     accentColor: "rgb(var(--emerald-neon))",
     glowColor: "rgba(var(--emerald-neon), 0.15)",
-    icon: <Web3Icon color="rgb(var(--emerald-neon))" />,
+    icon: <DataIcon color="rgb(var(--emerald-neon))" />,
     span: "normal",
   },
   {
-    id: "photonic",
-    label: tItems("photonic.label"),
-    title: tItems("photonic.title"),
-    description: tItems("photonic.description"),
+    id: "security",
+    label: tItems("security.label"),
+    title: tItems("security.title"),
+    description: tItems("security.description"),
     accentColor: "rgb(var(--purple-electric))",
     glowColor: "rgba(var(--purple-electric), 0.15)",
-    icon: <PhotonicIcon color="rgb(var(--purple-electric))" />,
-    span: "normal",
-  },
-  {
-    id: "bio",
-    label: tItems("bio.label"),
-    title: tItems("bio.title"),
-    description: tItems("bio.description"),
-    accentColor: "rgb(var(--blue-neon))",
-    glowColor: "rgba(var(--blue-neon), 0.15)",
-    icon: <BioDigitalIcon color="rgb(var(--blue-neon))" />,
-    span: "normal",
-  },
-  {
-    id: "synthesis",
-    label: tItems("synthesis.label"),
-    title: tItems("synthesis.title"),
-    description: tItems("synthesis.description"),
-    accentColor: "#00FF9D",
-    glowColor: "rgba(0,255,157,0.15)",
-    icon: <SynthesisIcon color="#00FF9D" />,
+    icon: <SecurityIcon color="rgb(var(--purple-electric))" />,
     span: "wide",
     featured: true,
   },
